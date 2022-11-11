@@ -1,0 +1,34 @@
+.reader{
+    // .read{
+    // border: 2px solid #00ff62;
+
+    // }
+
+    .modal{
+        width: 10rem;
+        height: 20rem;
+        background-color: red;
+    }
+    .read:hover{
+transform: scale(1.03);
+cursor: pointer;
+transition: .5s ease-in-out;
+z-index: 99;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.description{
+    width: fit-content;
+    height: 9rem;
+    overflow-y: scroll;
+    // line-height: 4px;
+    // border: 2px solid red;
+}
+.pub_btns{
+    z-index: 100;
+}
+}

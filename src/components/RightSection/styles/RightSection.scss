@@ -1,0 +1,54 @@
+.right-section {
+  // width: 50%;
+  height: 100vh;
+  // border: 2px solid red;
+  border-left: 2px solid orangered;
+  border-top: 2px solid orangered;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  // position: fixed;
+  margin-right: 2rem;
+  padding-bottom: 25rem;
+  // margin-top: 12rem;
+  overflow-y: scroll;
+  transition: .5s;
+  .right_ads {
+    width: 80%;
+    height: 10rem;
+    background-color: rgb(253, 196, 163);
+    margin: 4rem 1rem;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    .cancel_btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      cursor: pointer;
+      color: black;
+    }
+}
+}
+
+
+// .right-section:hover{
+//   overflow-y: visible;
+//   transition: 1s;
+//   overflow-y: scroll;
+
+
+// }
+.is-sticky {
+  position: fixed;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+  background-color: #ee4444 !important;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}

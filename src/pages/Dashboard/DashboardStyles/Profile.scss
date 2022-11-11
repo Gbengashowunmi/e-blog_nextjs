@@ -1,0 +1,50 @@
+.profile {
+  color: #fff;
+  width: 70%;
+  height: fit-content;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #03033a, #06069b);
+  box-shadow: 2px 2px 6px #03033a;
+  border: .5px solid white;
+  margin: auto;
+  margin-top: 10%;
+  text-align: center;
+  .image {
+    width: 10vw;
+    height: 10vw;
+    background-color: rgb(193, 198, 224);
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 5px #03033a, -2px -2px 5px #2121df;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid white;
+      object-fit: cover;
+    }
+  }
+  button {
+    padding: 10px;
+    border: none;
+    outline: 0 !important;
+    border-radius: 50px;
+    background: #03033a;
+    color: white;
+    box-shadow: 2px 2px 5px #03033a, -2px -2px 5px #2121df;
+  }
+}
+
+@media (max-width:790px) {
+  .profile {
+    width: 100%;
+    padding: 3rem 4rem;
+    .image {
+      width: 30vw;
+      height: 30vw;
+    }
+  }
+  
+}

@@ -1,0 +1,68 @@
+.filter-btns{
+    width: 100%;
+    height: fit-content;
+    // background-color: rgb(73, 216, 216);
+    margin-top: 2rem;
+    // margin: auto;
+    // border: 1px solid orangered;
+
+    display: flex;
+    flex-wrap: wrap;
+    // overflow-x: scroll;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+margin:2rem 0;
+    
+    .filter_btn{
+        border-radius: 8px;
+        border: 1px solid orangered;
+        padding: 0.2rem .6rem;
+        transition: .7s;
+        font-size: 1vw;
+        width: fit-content;
+
+
+    }
+    .filter_btn:hover{
+        background-color: orangered;
+        color: white;
+        transition: .7s;
+    }
+}
+::-webkit-scrollbar {
+    height: 5px;
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: orangered; 
+    border-radius: 10px;
+  }
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(211, 59, 4); 
+  }
+@media (max-width: 600px) {
+
+    .filter-btns{
+        // margin-top: 2rem;
+        // margin: auto;
+        display: flex;
+        // flex-wrap: wrap;
+        // align-items: center;
+        // justify-content: center;
+        gap: 1rem;
+        .filter_btn{
+            font-size: 2.5vw;
+    
+        }
+        }
+}

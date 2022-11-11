@@ -1,0 +1,110 @@
+.edit_profile {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  gap: 1rem;
+  // background-color: blue;
+  align-items: center;
+  margin-top: 10%;
+  text-align: center;
+
+  .left_sect {
+    width: 40%;
+    height: 100%;
+    // background-color: blue;
+    border-right: 2px solid blue;
+    .image {
+      width: 10vw;
+      height: 10vw;
+      background-color: rgb(193, 198, 224);
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 1.5rem;
+      box-shadow: 2px 2px 5px #03033a, -2px -2px 5px #2121df;
+      position: relative;
+      cursor: pointer;
+      p {
+        margin-bottom: 2rem;
+        color: red;
+        font-size: small;
+      }
+      button {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        cursor: pointer;
+        input {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          opacity: 0;
+          cursor: pointer;
+          background-color: red;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid white;
+        object-fit: cover;
+        // background-color: yellow;
+      }
+    }
+  }
+  .right_sect {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      .input {
+        margin: 15px 0;
+      }
+      .btn {
+        padding: 10px 15px;
+        border: none;
+        width: fit-content;
+        margin: auto;
+        outline: 0 !important;
+        border-radius: 50px;
+        color: #03033a;
+        font-weight: bold;
+        // background: #03033a;
+        box-shadow: 2px 2px 5px #03033a;
+        z-index: 99;
+      }
+    }
+  }
+}
+
+@media (max-width: 790px) {
+  .edit_profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    .left_sect {
+      width: 80%;
+      border-bottom: 2px solid blue;
+      border-right: none;
+      padding-bottom: 1rem;
+
+      .image {
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+    .right_sect {
+      width: 90%;
+    }
+  }
+}

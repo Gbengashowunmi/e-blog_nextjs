@@ -1,0 +1,221 @@
+.businessSection {
+  width: 100%;
+  margin: 0.8rem 0;
+
+  // background-color: red;
+  header {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: orangered;
+    align-items: center;
+    h3 {
+      font-weight: bolder;
+    }
+    p{
+      transition: .7s;
+    }
+    p:hover{
+      cursor: pointer;
+      color: rgb(190, 56, 7);
+      transition: .7s;
+    }
+  }
+  .business {
+    display: flex;
+    // border: 2px solid grey;
+    height: fit-content;
+    justify-content: space-between;
+    gap: 2rem;
+    .leftBusiness {
+      width: 100%;
+      height: 100%;
+      // border: 2px solid violet;
+
+      .image {
+        width: 100%;
+        height: 20rem;
+        //  border: 2px solid rgb(124, 124, 20);
+        object-fit: contain;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .caption {
+        width: 100%;
+        height: fit-content;
+        padding: 1rem 1rem;
+        // border: 2px solid yellow;
+        background-color: orangered;
+        color: white;
+        font-size: 1.2vw;
+        span {
+          display: flex;
+          width: 40%;
+          color: white;
+          justify-content: left;
+          gap: 1rem;
+        // border: 2px solid yellow;
+
+        }
+      }
+    }
+
+    .rightBusiness {
+      width: 45%;
+      height: 95%;
+      // border: 2px solid violet;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+
+      .right {
+        height: fit-content;
+        // border: 2px solid yellow;
+        box-shadow: 1px 2px 3px grey;
+        padding: 2rem;
+        flex-direction: column;
+        background-color: white;
+
+        h5 {
+          // border: 2px solid orange;
+        font-size: 1.2vw;
+          
+        }
+
+        button {
+          background: none;
+          border: none;
+          color: orangered;
+          display: block;
+        font-size: 1.2vw;
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 790px) {
+  .businessSection {
+    .business {
+      display: flex;
+      flex-direction: column;
+      // border: 2px solid grey;
+      height: fit-content;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      .leftBusiness {
+        width: 100%;
+        height: 100%;
+        // border: 2px solid violet;
+
+        .image {
+          width: 100%;
+          height: 20rem;
+          // border: 2px solid rgb(124, 124, 20);
+          object-fit: contain;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .caption {
+          width: 100%;
+          height: fit-content;
+          padding: 1rem 1rem;
+          // border: 2px solid yellow;
+          // background-color: orangered;
+          color: white;
+          p{
+            font-size: 3vw;
+          }
+          span {
+            display: flex;
+            width: fit-content;
+            justify-content: left;
+            gap: 1rem;
+            // padding-bottom: 0;
+            color: white;
+            // border: 2px solid yellow;
+          }
+        }
+      }
+
+      .rightBusiness {
+        width: 100%;
+        // border: 2px solid violet;
+
+        .right {
+          height: fit-content;
+          // border: 2px solid yellow;
+          box-shadow: 1px 2px 3px grey;
+          padding: 1rem;
+          flex-direction: column;
+          background-color: white;
+
+          h5 {
+            // border: 2px solid orange;
+            font-size: 3vw;
+          }
+
+          button {
+            background: none;
+            border: none;
+            color: orangered;
+            display: block;
+            font-size: 3vw;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .businessSection {
+    .business {
+      .leftBusiness {
+        height: 100%;
+        .image {
+          // border: 2px solid rgb(124, 124, 20);
+          img {
+            object-fit: cover;
+          }
+        }
+        .caption {
+          p{
+            font-size: 5vw;
+          }
+        } 
+      }
+      .rightBusiness {
+        .right {
+          h5 { 
+            // border: 2px solid orange;
+            font-size: 6vw;
+          }
+
+          button {
+            background: none;
+            border: none;
+            color: orangered;
+            display: block;       
+            font-size: 6vw;
+
+          }
+        }
+      }
+    }
+  }
+
+}
+
+

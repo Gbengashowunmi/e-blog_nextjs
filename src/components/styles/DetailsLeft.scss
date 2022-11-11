@@ -1,0 +1,222 @@
+.detailsLeftSection {
+  width: 90%;
+  margin: auto;
+  overflow: auto;
+  // text-align: center;
+  // border: 2px solid red;
+  // height: fit-content;
+  img {
+    width: 100%;
+  }
+  .content {
+    border-bottom: 1px solid grey;
+  }
+  .headline {
+    width: 100%;
+    // padding-bottom: 2rem;
+    // line-height: 2rem;
+    height: fit-content;
+    // border-bottom: 2px solid grey;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .navigate {
+      display: flex;
+      align-items: center;
+      // height: fit-content;
+      // border: 2px solid blue;
+      // background-color: yellow;
+      // justify-content: space-between;
+      // padding: .5rem 0;
+      a {
+        color: red;
+        text-decoration: none;
+      }
+    }
+    h1 {
+      font-size: 2.5rem;
+      padding: 0;
+      margin: 0;
+      font-weight: 400;
+      // border: 2px solid blue;
+    }
+    .comment {
+      display: flex;
+      // border: 2px solid red;
+      width: 33%;
+      justify-content: space-between;
+    }
+  }
+  .img-to-left {
+    width: 100%;
+    img {
+      width: 13rem;
+      float: left;
+      padding-right: 1rem;
+    }
+  }
+  .img-to-right {
+    width: 100%;
+    // border: 2px solid blue;
+    img {
+      width: 13rem;
+      float: right;
+      padding-left: 1rem;
+    }
+  }
+  .share-container {
+    width: 100%;
+    padding: 1rem 1rem;
+    // border-top:1px solid grey ;
+      // border: 2px solid yellow;
+      margin-bottom:  1.5rem;
+
+    border-bottom: 1px solid grey;
+    .share {
+      width: 35%;
+      // border: 2px solid yellow;
+      display: flex;
+      // align-items: center;
+      justify-items: center;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+  .comment-section {
+    width: 100%;
+    // border: 2px solid red;
+    margin-top: 1rem;
+    .comment-section-header {
+      width: 100%;
+      display: flex;
+      justify-content: left;
+      gap: 1rem;
+      color: black;
+    }
+    .reply-comments {
+      width: 90%;
+      display: flex;
+      justify-content: right;
+      gap: 1rem;
+      border-top: 1px solid grey;
+      padding: 1rem 0;
+      margin-left: auto;
+    }
+    .comments {
+      width: 100%;
+      display: flex;
+      justify-content: left;
+      gap: 1rem;
+      border-top: 1px solid grey;
+      padding: 1rem 0;
+
+      .avi {
+        width: 5rem;
+        // border: 2px solid red;
+        height: 5rem;
+        object-fit: cover;
+        border-radius: 50%;
+        img {
+          border-radius: 50%;
+          // width: 100%;
+          // height:100%;
+        }
+      }
+      .comment-details {
+        width: 80%;
+        // border: 2px solid yellow;
+        .username-date {
+          display: flex;
+          justify-content: left;
+          gap: 1rem;
+        }
+
+        .del-comment{
+          cursor: pointer;
+          color: rgb(224, 48, 16);
+          border: none;
+        }
+      }
+    }
+    .input-comment{
+      width: 100%;
+      // height: fit-content;
+      // border: 2px solid blue;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 2px 2px 2px grey;
+      .comment-form{
+        width: 100%;
+        height: fit-content;
+        // border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        .input{
+          display: flex;
+          width: 100%;
+          // border: 2px solid grey;
+          align-items: center;
+          .user-avi{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+          }
+          input{
+            &:focus { 
+              outline: none !important;
+              }
+            width: 100%;
+            height: 50%;
+            border: none;
+            border-bottom: 1px solid grey;
+          }
+        }
+button{
+  margin: auto;
+  cursor: pointer;
+  border: none;
+  background-color: orangered;
+  color: white;
+  border-radius: 8px;
+  padding: .2rem 1rem;
+}
+button:hover{
+  background-color: rgb(199, 58, 7);
+
+}
+      }
+    }
+    .edit_delete{
+      display: flex;
+      width: fit-content;
+      height: fit-content;
+      gap: 2rem;
+      margin-top: 1rem;
+      // background-color: red ;
+      .del_comment,.edit_comment{
+        cursor: pointer;
+        color: rgb(224, 48, 16);
+        // background-color: red;
+        border: none;
+        cursor: pointer;
+      }
+      .del_comment:hover,.edit_comment:hover{
+        color: rgb(173, 31, 6);
+      }
+    }
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+.pointer {
+  cursor: pointer;
+}

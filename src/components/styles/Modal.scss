@@ -1,0 +1,89 @@
+.my_modal{
+    width: 30vw;
+    height: 15rem;
+    background-color: rgb(219, 219, 205);
+    position: absolute;
+    top: 30vh;
+    left: 35%;
+    border-radius: 10px;
+    box-shadow: 2px 3px 4px rgb(42, 46, 41);
+    z-index: 102;
+    text-align: center;
+    padding: 5rem 1rem;
+    position: fixed;
+
+
+    .confirm_btns{
+        width: fit-content;
+        // border: 2px solid red;
+        margin: auto;
+button{
+    border: none;
+    border-radius: 5px;
+    padding: 3px 1rem;
+    transition: .5s;
+    margin: 0 .5rem;
+
+}
+.cancel_btn:hover{
+    background-color: tomato;
+    color: white;
+    transition: .5s;
+
+
+}
+.yes_btn:hover{
+    background-color: green;
+    color: white;
+    transition: .5s;
+
+}
+    }
+    .read_again{
+        width: fit-content;
+        border: none;
+        border-radius: 5px;
+        padding: 3px 1rem;
+        transition: .5s;
+        margin: 1rem .5rem;
+    background-color: rgb(3, 4, 90);
+    color: white;
+
+
+    }
+}
+.modal_overlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(202, 59, 59, 0.377);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: .3s;
+}
+.publish{
+    background-color: rgba(71, 202, 59, 0.377);
+}
+
+.remove{
+    opacity: 0;
+    transition: .3s;
+}
+
+@media (max-width:790px) {
+    .my_modal{
+        width: 60vw;
+        height: 12rem;
+        background-color: rgb(219, 219, 205);
+        top: 30vh;
+        left: 20%;
+        box-shadow: 2px 3px 4px rgb(42, 46, 41);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // border: 2px solid red;
+    }
+}

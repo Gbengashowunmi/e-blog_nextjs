@@ -1,0 +1,123 @@
+.footer{
+    width: 100%;
+    height: fit-content;
+    // background-color: red;
+        // border: 2px solid red;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 1px 2px 6px grey;
+    // margin-bottom: 2rem;
+background-color: white;
+// z-index: 999;
+
+    // background-color: beige;
+    .footer-name{
+        // border: 2px solid red;
+        width: 30%;
+        height: 80%;
+        border-right: 1px solid grey;
+        // padding: 0 1rem;
+        // font-size: 20%;
+    }
+    .ul{
+        width: 30%;
+        // border: 2px solid green;
+        border-right: 1px solid grey;
+        list-style: none;
+
+    }
+    .form-section{
+        width: 30%;
+        // border: 2px solid yellow;
+        // margin: auto;
+        
+        .contact-icons{
+            // width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+            gap: 1rem;
+            padding-bottom: 1rem;
+    .icon{
+        width: 2rem;
+        height: 2rem;
+    }
+    .icon:hover{
+        color: orangered;
+        cursor: pointer;
+    }
+        }
+        .form{
+            width: 100%;
+            // border: 2px solid red;
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            justify-content: space-between;
+            // align-items: center;
+            gap: 1rem;
+            input{
+                width: 100%;
+            }
+            button{
+                padding: 0 1rem;
+                border: none;
+                background-color: orangered;
+                color: white;
+                font-weight: bolder;
+                cursor: pointer;
+                margin: auto;
+            }
+            button:hover{
+                background-color: rgb(189, 54, 4);
+            }
+        }
+    }
+}
+
+
+@media (max-width:760px) {
+    .footer{
+        height: fit-content;
+            // border: 2px solid red;
+    
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 1px 2px 6px grey;
+        // margin-bottom: 2rem;
+    background-color: white;
+    
+        .footer-name{
+            border-bottom: 1px solid grey;
+            margin-bottom: 1rem;
+            width: 100%;
+            height: fit-content;
+            border-right: none;
+            text-align: center;
+        }
+        .ul{
+            width: 100%;
+            // border: 2px solid green;
+            border-right: none;
+            border-bottom: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 2rem;
+    
+        }
+        .form-section{
+            width: 100%;
+            // border: 2px solid yellow;
+            
+            }
+            .form{
+                // border: 2px solid red;
+                height: fit-content;
+               
+            }
+        }
+    }
