@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;900&display=swap");
+
+.tech {
+  width: 100%;
+  height: fit-content;
+  margin-top: 0.8rem;
+  // border: 2px solid red;
+  // background-color: yellow;
+
+  span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: orangered;
+    h3 {
+      font-weight: bolder;
+      font-size: larger;
+    }
+    p{
+      transition: .7s;
+      font-size: small;
+
+    }
+    p:hover{
+      cursor: pointer;
+      color: rgb(190, 56, 7);
+      transition: .7s;
+    }
+  }
+  .tech_items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // flex-wrap: wrap;
+    justify-content: left;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    .tech_main{
+      width: 100%;
+      height: 20rem;
+      background-color: black;
+    }
+    .tech_item {
+      // width: 32%;
+      height: 23rem;
+      // border: 2px solid purple;
+      margin-bottom: 1rem;
+      box-shadow: 1px 1px 3px rgb(179, 179, 179);
+      transition: .5s;
+
+      a{
+        text-decoration: none;
+        color: inherit;
+      }
+      .image_container:hover {
+        cursor: pointer;
+      }
+      .image_container {
+        height: 45%;
+        width: 100%;
+        // border: 2px solid blue;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .button {
+          position: absolute;
+          bottom: 0;
+          padding: 1.5rem 1rem;
+          color: white;
+          button {
+            width: fit;
+            color: white;
+            border: none;
+            background-color: orangered;
+            // font-size: 1vw;
+
+          }
+          h5 {
+            font-size: 1vw;
+            font-weight: 600;
+            text-shadow: 2px 2px #111111;
+          }
+        }
+      }
+      .tech_details {
+        // grid-column-gap: 2
+        background-color: white;
+        height: 55%;
+        padding: 0.5rem 1rem;
+        font-size: smaller;
+
+        .description {
+          border-bottom: 1px solid rgb(158, 158, 158);
+          padding-bottom: 0.5rem;
+        }
+        p {
+          font-size: 1vw;
+          
+        }
+      }
+    }
+    .tech_item:hover{
+      transform: scale(1.01);
+      transition: .5s;
+    }
+    // .advert{
+    //   width: 200px;
+    //   height: 10rem;
+    //   border: 2px solid blue;
+    // }
+  }
+}
+
+@media (max-width: 790px) {
+  .tech {
+    width: 100%;
+    height: fit-content;
+    margin-top: 0.8rem;
+    span {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      color: orangered;
+    }
+
+    .tech_items {
+      // background-color: white;
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+      // border: 2px solid blue;
+      .tech_item {
+        width: 100%;
+        height: fit-content;
+        // border: 2px solid purple;
+        margin-bottom: 1rem;
+        box-shadow: 1px 1px 3px rgb(179, 179, 179);
+        .image_container:hover {
+          cursor: pointer;
+        }
+        .image_container {
+          height: 45%;
+          width: 100%;
+          // border: 2px solid blue;
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .button {
+            color: white;
+            button {
+            font-size: 2.5vw;
+            }
+            h5 {
+            font-size: 3.5vw;
+            }
+          }
+        }
+        .tech_details {
+          p {
+            font-size: 3.5vw;
+          }
+        }
+      }
+    }
+  }
+}  
+
+@media (max-width: 400px) {
+  .tech {
+    .tech_items {
+      .tech_item {
+        .image_container {
+          .button {
+            button {
+            font-size: 4vw;
+            }
+            h5 {
+            font-size: 6vw;
+            }
+          }
+        }
+        .tech_details {
+          p {
+            font-size: 4.4vw;
+          }
+        }
+      }
+    }
+  }
+}

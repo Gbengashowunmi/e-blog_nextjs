@@ -1,0 +1,29 @@
+.leftSection{
+    width: 100%;
+    // border: 2px solid red;
+    height: 100%;
+    // border: 2px solid green;
+    .left_ads{
+        width: 80%;
+        height: 10rem;
+        background-color: rgb(116, 172, 245);
+        margin: 4rem 1rem;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        .cancel_btn{
+            position: absolute;
+    top: .5rem;
+    right: 1rem;
+    cursor: pointer;
+    color: black;
+        }
+}
+}
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
