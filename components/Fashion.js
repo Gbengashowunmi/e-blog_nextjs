@@ -24,12 +24,12 @@ console.log(tech)
     <div className={styles.fashion_container}>
       <span>
         <h3>FASHION</h3>
-        <Link href="/post">
+        {/* <Link href="/post">
           <p>
             VIEW ALL
             <AiOutlineRight />
           </p>
-        </Link>
+        </Link> */}
       </span>
 
       <div className={styles.containers}>

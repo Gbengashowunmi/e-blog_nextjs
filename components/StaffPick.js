@@ -11,9 +11,9 @@ export default function StaffPick() {
     <div className="staffSection" id="Tech">
       <header>
         <h3>STAFF PICK</h3>
-        <p>
+        {/* <p>
           VIEW ALL <AiOutlineRight />{" "}
-        </p>
+        </p> */}
       </header>
       <div className="staffPick">
         <div className="leftStaff">

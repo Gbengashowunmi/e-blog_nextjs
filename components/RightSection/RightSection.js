@@ -72,7 +72,7 @@ export default function RightSection() {
               return (
                 <Link
                   href={{
-                    pathname: `Details/${eachNews.slug}/`,
+                    pathname: `/Details/${eachNews.slug}/`,
                     query: { name: "news" },
                   }}
                 >
@@ -108,7 +108,7 @@ export default function RightSection() {
               return (
                 <Link
                   href={{
-                    pathname: `Details/${eachNews.slug}/`,
+                    pathname: `/Details/${eachNews.slug}/`,
                     query: { name: "news" },
                   }}
                 >

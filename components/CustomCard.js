@@ -9,6 +9,7 @@ export default function CustomCard({
   src,
   author,
   dateCreated,
+  description,
   // imageHeight = "32px",
   desfontSize = "14px",
   datefontSize = "14px",
@@ -36,9 +37,7 @@ export default function CustomCard({
           </p>
         </span>
         <p style={{ fontSize: desfontSize }}>
-          Hi everyone! This is my architectural concept. I wanted to get snowy
-          atmosphere. That is quick matte painting sketch. I hope you enjoy it!
-          Iphone dolo... Read more
+          {description && description}... Read more
         </p>
       </div>
     </div>

@@ -15,17 +15,32 @@ import RightSection from "../../components/RightSection/RightSection";
 import Footer from "../../components/Footer";
 import Headers from "../../components/Header";
 import { AppUrl } from "../_app";
+import Link from "next/link";
+
+// export async function getStaticProps() {
+//   const router = useRouter();
+//   const slug = router.query.DetailsLeftSection;
+
+//   const result = await fetch(`${AppUrl}/${router.query.name}/${slug}/`);
+//   const data = await result.json();
+
+//   console.log("im a" + data);
+
+//   return {
+//     props: { data: data },
+//   };
+// }
 
 export default function DetailsLeftSection() {
   const router = useRouter();
-    const slug = router.query.DetailsLeftSection
-console.log(router.query.name);
+  const slug = router.query.DetailsLeftSection;
+  // console.log(router.query.name);
 
-//states declaration
-  const [getLoggedIn, setGetLoggedIn] = useState('');
-  const [getAdmin, setGetAdmin] = useState('');
+  //states declaration
+  const [getLoggedIn, setGetLoggedIn] = useState("");
+  const [getAdmin, setGetAdmin] = useState("");
   // const [checkAdmin, setCheckAdmin] = useState('');
-  const [getUserId, setGetUserId] = useState('');
+  const [getUserId, setGetUserId] = useState("");
   // const [form, setForm] = useState(false);
   const [details, setDetails] = useState([]);
   const [comments, setComments] = useState([]);
@@ -34,17 +49,15 @@ console.log(router.query.name);
 
   //get data from local storage
   useEffect(() => {
-    setGetLoggedIn(window.localStorage.getItem("is_loggedIn"))
-    setGetAdmin(window.localStorage.getItem("is_admin"))
-    setGetUserId(window.localStorage.getItem("user_id"))
-  }, [])
+    setGetLoggedIn(window.localStorage.getItem("is_loggedIn"));
+    setGetAdmin(window.localStorage.getItem("is_admin"));
+    setGetUserId(window.localStorage.getItem("user_id"));
+  }, []);
   const checkAdmin = getAdmin === "true" ? true : false;
-
-
 
   const handleInput = (e) => {
     setUserComments(e.target.value);
-    console.log(userComments);
+    // console.log(userComments);
   };
 
   //fetching comments
@@ -61,7 +74,6 @@ console.log(router.query.name);
     setDetails(data);
     // console.log(data);
   };
-  
 
   //post comments
   const postComment = (e) => {
@@ -100,7 +112,7 @@ console.log(router.query.name);
     getLoggedIn
       ? fetch(`${AppUrl}/comments/`, requestOptions)
           .then((response) => response.text())
-          .then((result) => console.log(result))
+          // .then((result) => console.log(result))
 
           .catch((error) => console.log("error", error))
       : alert("please log in to comment");
@@ -166,152 +178,150 @@ console.log(router.query.name);
     const data = await response.json();
     // detailsEdit(data)
     // setEdit(true)
-    console.log(data);
+    // console.log(data);
   };
   return (
     <>
-       <Headers /> 
+      <Headers />
       <div className={styles.mainSection}>
-
         <div className={styles.leftSection}>
-      
-    <div className={styles.detailsLeftSection}>
-      <Helmet>
-        <title> category</title>
-        <meta name={details.description} content="Helmet application" />
-      </Helmet>
-      <div className={styles.headline}>
-        <img src={details?.image} alt="details-img" />
-        <div className={styles.navigate}>
-          <a href="/">
-            <p>Home</p>
-          </a>
-          <AiOutlineRight />
-          <a href="/">
-            <p>Fashion</p>
-          </a>
-          <AiOutlineRight />
-          <a href="/">
-            <p>Photoraphy</p>
-          </a>
-        </div>
-        <h1>{details?.title}</h1>
-        <div className={styles.comment}>
-          <p>0</p>
-          <p> {details.owner}</p>
-          <p>
-            <AiOutlineClockCircle /> {details.created}
-          </p>
-        </div>
-      </div>
-      <div className={styles.content}>
-
-        <p>
-          {details.description}
-        </p>
-
-      </div>
-      <div className={styles.share_container}>
-        <div className={styles.share}>
-            <AiOutlineShareAlt />
-            <p> SHARE:</p>
-            <AiFillTwitterSquare style={{ height: "20px" }} />
-            <AiFillFacebook />
-            <FaWhatsappSquare />
-        </div>
-        <input placeholder="https://magonedemo.blogspot.com/2015/06/neque-adipiscing-varius-peo" />
-      </div>
-      <div className={styles.comment_section}>
-        <span className={styles.comment_section_header}>
-          <h4>
-            <i class="fa-solid fa-comments"></i> COMMENTS
-          </h4>
-        </span>
-
-        {comments.map((comment) => {
-          if (comment.post === +details.id) {
-            return (
-              <div className={styles.comments} key={comment.id}>
-                <div className={styles.avi}>
-                  <img
-                    src="https://2.bp.blogspot.com/-c44zyXSkI_k/U4gCFGyzluI/AAAAAAAALMo/1_za8Y2XbzU/s35/MTavatar.png"
-                    alt=""
-                  />
-                </div>
-
-                <div className={styles.comment_details}>
-                  <span className={styles.username_date}>
-                    <p className={styles.bold } >{comment.owner}</p>
-                    {/* <p className="date pointer">{comment.created_at}</p> */}
-                  </span>
-
-                  <p className={styles.comment}>{comment.body}</p>
-                  {/* <p className="comment">{userComments}</p> */}
-
-                  <span>
-                    {+getUserId === comment.owner_id ||
-                    getUserId === comment.owner_id ? (
-                      <div className={edit_delete}>
-                        <p
-                          className={styles.del_comment}
-                          onClick={() => deleteComment(comment.id)}
-                        >
-                          Delete
-                          <i class="fa-sharp fa-solid fa-trash"></i>
-                        </p>
-                        <p className={styles.edit_comment}>
-                          Edit <i class="fa-solid fa-pen-to-square"></i>
-                        </p>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </span>
-                </div>
+          <div className={styles.detailsLeftSection}>
+            <Helmet>
+              <title> category</title>
+              <meta name={details.description} content="Helmet application" />
+            </Helmet>
+            <div className={styles.headline}>
+              <img src={details?.image} alt="details-img" />
+              <div className={styles.navigate}>
+                <a href="/">
+                  <p>Home</p>
+                </a>
+                <AiOutlineRight />
+                <a href="/">
+                  <p>Fashion</p>
+                </a>
+                <AiOutlineRight />
+                <a href="/">
+                  <p>Photoraphy</p>
+                </a>
               </div>
-            );
-          }
-        })}
-
-        <div className={styles.input_comment}>
-          <h3>Enter Comment</h3>
-          <form className={styles.comment_form} onSubmit={postComment}>
-            <div className={styles.input}>
-              <img
-                src="https://2.bp.blogspot.com/-c44zyXSkI_k/U4gCFGyzluI/AAAAAAAALMo/1_za8Y2XbzU/s35/MTavatar.png"
-                alt=""
-                className={styles.user_avi}
-              />
-              <input
-                placeholder="comment"
-                onChange={handleInput}
-                value={userComments}
-              />
+              <h1>{details?.title}</h1>
+              <div className={styles.comment}>
+                <p>0</p>
+                <p> {details.owner}</p>
+                <p>
+                  <AiOutlineClockCircle /> {details.created}
+                </p>
+              </div>
             </div>
-            <button>Post</button>
-          </form>
-        </div>
+            <div className={styles.content}>
+              <p>{details.description}</p>
+            </div>
+            <div className={styles.share_container}>
+              <div className={styles.share}>
+                <AiOutlineShareAlt />
+                <p> SHARE:</p>
+                <Link href='/twitter.com'><AiFillTwitterSquare style={{ height: "50px", width:"50px", color:'blue'
+               }} /></Link>
+                <Link href='/facebook.com'><AiFillFacebook style={{ height: "50px", width:"50px" , color:'blue'
+               }} /></Link>
+               <Link href='/whatsapp.com'> <FaWhatsappSquare style={{ height: "50px", width:"50px", color:'green'
+               }}/></Link>
+              </div>
+              <input placeholder="https://magonedemo.blogspot.com/2015/06/neque-adipiscing-varius-peo" />
+            </div>
+            <div className={styles.comment_section}>
+              <span className={styles.comment_section_header}>
+                <h4>
+                  <i class="fa-solid fa-comments"></i> COMMENTS
+                </h4>
+              </span>
 
-        {+getUserId === details.owner_id || getUserId === details.owner_id ? (
-          <div className={styles.edit_delete}>
-            <p className={styles.del_comment} onClick={deletePost}>
-              Delete Post
-              <i class="fa-sharp fa-solid fa-trash"></i>
-            </p>
-            <Link to={`/dashboard/edit-post/${details.slug}`}>
-              <p
-                className={styles.edit_comment}
-                // onClick={editPost}
-              >
-                Edit Post<i class="fa-solid fa-pen-to-square"></i>
-              </p>
-            </Link>
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
-      {/* <>
+              {comments.map((comment) => {
+                if (comment.post === +details.id) {
+                  return (
+                    <div className={styles.comments} key={comment.id}>
+                      <div className={styles.avi}>
+                        <img
+                          src="https://2.bp.blogspot.com/-c44zyXSkI_k/U4gCFGyzluI/AAAAAAAALMo/1_za8Y2XbzU/s35/MTavatar.png"
+                          alt=""
+                        />
+                      </div>
+
+                      <div className={styles.comment_details}>
+                        <span className={styles.username_date}>
+                          <p className={styles.bold}>{comment.owner}</p>
+                          {/* <p className="date pointer">{comment.created_at}</p> */}
+                        </span>
+
+                        <p className={styles.comment}>{comment.body}</p>
+                        {/* <p className="comment">{userComments}</p> */}
+
+                        <span>
+                          {+getUserId === comment.owner_id ||
+                          getUserId === comment.owner_id ? (
+                            <div className={edit_delete}>
+                              <p
+                                className={styles.del_comment}
+                                onClick={() => deleteComment(comment.id)}
+                              >
+                                Delete
+                                <i class="fa-sharp fa-solid fa-trash"></i>
+                              </p>
+                              <p className={styles.edit_comment}>
+                                Edit <i class="fa-solid fa-pen-to-square"></i>
+                              </p>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
+
+              <div className={styles.input_comment}>
+                <h3>Enter Comment</h3>
+                <form className={styles.comment_form} onSubmit={postComment}>
+                  <div className={styles.input}>
+                    <img
+                      src="https://2.bp.blogspot.com/-c44zyXSkI_k/U4gCFGyzluI/AAAAAAAALMo/1_za8Y2XbzU/s35/MTavatar.png"
+                      alt=""
+                      className={styles.user_avi}
+                    />
+                    <input
+                      placeholder="comment"
+                      onChange={handleInput}
+                      value={userComments}
+                    />
+                  </div>
+                  <button>Post</button>
+                </form>
+              </div>
+
+              {+getUserId === details.owner_id ||
+              getUserId === details.owner_id ? (
+                <div className={styles.edit_delete}>
+                  <p className={styles.del_comment} onClick={deletePost}>
+                    Delete Post
+                    <i class="fa-sharp fa-solid fa-trash"></i>
+                  </p>
+                  <Link to={`/dashboard/edit-post/${details.slug}`}>
+                    <p
+                      className={styles.edit_comment}
+                      // onClick={editPost}
+                    >
+                      Edit Post<i class="fa-solid fa-pen-to-square"></i>
+                    </p>
+                  </Link>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+            {/* <>
        <div className={showModal? "modal_overlay": 'remove'}></div>
       <div className={showModal? "my_modal":'remove'} onClick={cancelBtn}>
       {
@@ -326,17 +336,16 @@ console.log(router.query.name);
         </div>
         
         </> */}
-    </div>
-    </div>
+          </div>
+        </div>
 
-    <div className={styles.rightSection}>
+        <div className={styles.rightSection}>
           <RightSection />
         </div>
 
-        <div className={styles.footer}>
+        <div className={styles.footer}></div>
       </div>
-    </div>
-        <Footer />
+      <Footer />
     </>
   );
 }

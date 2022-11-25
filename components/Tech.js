@@ -28,12 +28,12 @@ export default function Tech({category}) {
     >
       <span>
         <h3>TECH</h3>
-        <Link href="/post">
+        {/* <Link href="/post">
           <p>
           VIEW ALL
           <AiOutlineRight />
         </p>
-        </Link>
+        </Link> */}
       </span>
       <div className={styles.tech_items}>
         {data.map((eachNews) => {

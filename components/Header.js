@@ -97,9 +97,7 @@ export default function Headers() {
               <Link href="signin">
                 <button className={styles.login_btn}>Login</button>
               </Link>
-              {/* <Link href="signup">
-                <button className={styles.signup_btn}>Sign up</button>
-              </Link> */}
+      
             </div>
           ) : (
             <div className={styles.sign_in}>
@@ -107,7 +105,7 @@ export default function Headers() {
               <Link
                 href={
                   checkAdmin
-                    ? "/dashboard/posted-blogs"
+                    ? "/dashboard/WriteBlog"
                     : "/dashboard"
                 }
               >
@@ -124,21 +122,21 @@ export default function Headers() {
             {/* <AiFillCaretUp className={styles.home-arrow'/> */}
             <li>Home </li>
           </Link>
-          <Link href={"/"}>
+          {/* <Link href={"/"}>
             <li>
               Domes <AiFillCaretDown />
             </li>
-          </Link>
+          </Link> */}
           <Link href={"/"}>
             <li>
               Drop Down <AiFillCaretDown id="arrow-down" />
             </li>
           </Link>
-          <Link href={"/"}>
+          {/* <Link href={"/"}>
             <li>
               Mega Links <AiFillCaretDown />
             </li>
-          </Link>
+          </Link> */}
           <Link href={"/"}>
             <li>
               Mega Label <AiFillCaretDown />

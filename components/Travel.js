@@ -8,7 +8,7 @@ function Travel() {
     <div className='travelSection'>
         <header>
                 <h3>TRAVEL</h3>
-                <p>VIEW ALL <AiOutlineRight /> </p>
+                {/* <p>VIEW ALL <AiOutlineRight /> </p> */}
             </header>
     <Carousel className='travel-carousel'>
       <Carousel.Item className='item-container'>

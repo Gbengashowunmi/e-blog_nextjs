@@ -298,12 +298,7 @@
       display: flex;
       flex-direction: column;
       height: 50rem;
-      // align-items: flex-start;
-      // background-color: orangered;
       padding-top: 0.5rem;
-      // margin-bottom: 2rem;
-      // transform: translateY(0);
-      // align-items: center;
       border-top: 1px solid rgb(167, 2, 2);
       /* opacity: 0; */
       /* height: 0; */
@@ -316,24 +311,17 @@
     .navList_ul {
       width: 100%;
       flex-direction: column;
-      // background-color: red;
-      // justify-content: left;
-      // border: 2px solid black;
       gap: 1rem;
       padding: 0;
       // padding-bottom: 2rem;
     }
 
     .home_arrow {
-      /* position: absolute; */
-      /* top: 3.4rem; */
-      /* left: 5.5rem; */
       color: black;
     }
     ul a {
       width: 100%;
       height: 100%;
-      // padding: 0 2rem;
       li {
         // background-color: blue;
         padding: 0 1rem;
@@ -354,7 +342,7 @@
   }
   .shownavlist {
     // border: 2px solid green;
-    height: 26rem;
+    height: 21rem;
     // transition: 2s;
     z-index: 100;
     transition: all 1s ease-in-out;

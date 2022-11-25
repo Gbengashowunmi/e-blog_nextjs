@@ -35,6 +35,7 @@ export default function PoliticsScience() {
                 titlefontSize="20px"
                 author={eachNews.owner}
                 dateCreated ={eachNews.created}
+                description ={eachNews.description.substring(0,150)}
               />
               </Link>
             );

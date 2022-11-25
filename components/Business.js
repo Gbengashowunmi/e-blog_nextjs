@@ -17,10 +17,10 @@ export default function Business(){
             <div className={styles.businessSection} >
             <header>
                 <h3>BUSINESS</h3>
-        <Link href="/post">
+        {/* <Link href="/post">
 
                 <p>VIEW ALL <AiOutlineRight /> </p>
-        </Link>
+        </Link> */}
             </header>
         <div className={styles.business}>
             

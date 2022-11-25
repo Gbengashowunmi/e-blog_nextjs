@@ -13,12 +13,12 @@ export default function Architect() {
     <div className={styles.architect_container}>
       <span>
         <h3>ARCHITECT</h3>
-        <Link href="/post">
+        {/* <Link href="/post">
           <p>
             VIEW ALL
             <AiOutlineRight />
           </p>
-        </Link>
+        </Link> */}
       </span>
       {data.map((eachNews) => {
           if (eachNews.category.name === "Architect") {
