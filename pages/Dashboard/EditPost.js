@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AppUrl } from "../../App";
-import "./DashboardStyles/WriteBlog.scss";
-import Dashboard from "./Dashboard";
+import styles from "./DashboardStyles/WriteBlog.module.scss";
+import Dashboard from "../../components/Dashboard/Dashboard";
 import AuthenticationContext from "../Login/AuthContext";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -85,19 +85,19 @@ useEffect(()=>{
   return (
 
     <Dashboard>
-    <div className="writeBlog">
-      <h3 className="header">Write Your Blog here</h3>
-      <form className="blogpreview">
-        <div className="setPost">
-          <button className="preview">Preview</button>
-          <button type="submit" className="save">
+    <div className={styles.writeBlog}>
+      <h3 className={styles.header}>Write Your Blog here</h3>
+      <form className={styles.blogpreview}>
+        <div className={styles.setPost}>
+          <button className={styles.preview}>Preview</button>
+          <button type="submit" className={styles.save}>
             Save
           </button>
         </div>
       </form>
 
       <form
-        className="text-area"
+        className={styles.text_area}
         onSubmit={submitHandler}
         method="post"
         encType="multipart/form-data"
@@ -108,17 +108,17 @@ useEffect(()=>{
         
           placeholder="Enter Title"
           onChange={HandleInput}
-          className="title"
+          className={styles.title}
           value={input}
         />
 
         <label>Description:</label>
         <ReactQuill theme="snow" 
-         onChange={setValue} modules={modules} className="editorr"  placeholder="write your blog here"/>
+         onChange={setValue} modules={modules} className={styles.editorr}  placeholder="write your blog here"/>
 
         <label>Image:</label>
         <input name="file" type="file" onChange={HandleImage}/>
-        <button type="submit" className="submit-btn" >  {loading? <Oval  height={20} width={20} color="white" margin="auto"  wrapperStyle={{}} wrapperClass="" visible={true} ariaLabel='oval-loading' secondaryColor="white" strokeWidth={2} />: 'Post'}</button>:
+        <button type="submit" className={styles.submit-btn}>  {loading? <Oval  height={20} width={20} color="white" margin="auto"  wrapperStyle={{}} wrapperClass="" visible={true} ariaLabel='oval-loading' secondaryColor="white" strokeWidth={2} />: 'Post'}</button>:
         
       </form>
 

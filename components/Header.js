@@ -94,7 +94,7 @@ export default function Headers() {
           </div>
           {!getLoggedIn ? (
             <div className={styles.sign_in}>
-              <Link href="mike">
+              <Link href="signin">
                 <button className={styles.login_btn}>Login</button>
               </Link>
               {/* <Link href="signup">
@@ -107,8 +107,8 @@ export default function Headers() {
               <Link
                 href={
                   checkAdmin
-                    ? "dashboard/posted-blogs"
-                    : "dashboard/create-post"
+                    ? "/dashboard/posted-blogs"
+                    : "/dashboard"
                 }
               >
                 <button className={styles.signup_btn}>My Dashboard</button>

@@ -24,3 +24,11 @@ a {
     background: black;
   }
 }
+
+.ql-editor{
+  background-color: white;
+  min-height:8rem ;
+  height: fit-content;
+  /* border: 2px solid red; */
+
+}

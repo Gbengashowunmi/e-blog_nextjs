@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Dashboard from "./Dashboard";
 import TextField from "@mui/material/TextField";
-import "./DashboardStyles/EditProfile.scss";
+import "./DashboardStyles/EditProfile.module.scss";
 import Fab from "@mui/material/Fab";
 import { AppUrl } from "../../App";
 
@@ -90,9 +90,9 @@ const EditProfile = () => {
   };
   return (
     <Dashboard>
-      <form className="edit_profile" onSubmit={submitHandler}>
-        <div className="left_sect">
-          <div className="image">
+      <form className={styles.edit_profile} onSubmit={submitHandler}>
+        <div className={styles.left_sect}>
+          <div className={styles.image}>
             <img src={image} />
             <button>
               <input onChange={changeImage} type="file" />
@@ -101,14 +101,14 @@ const EditProfile = () => {
           </div>
           <h5>username: {username}</h5>
         </div>
-        <div className="right_sect">
+        <div className={styles.right_sect}>
           <h3>Profile Settings</h3>
-          <div className="form">
+          <div className={styles.form}>
             <TextField
               id="outlined-basic"
               label="First Name"
               variant="outlined"
-              className="input"
+              className={styles.input}
               onChange={HandleFirstNameInput}
               value={first_name}
               InputProps={{
@@ -119,7 +119,7 @@ const EditProfile = () => {
               id="outlined-basic"
               label="Last Name"
               variant="outlined"
-              className="input"
+              className={styles.input}
               onChange={HandleLastName}
               value={lastName}
               InputProps={{
@@ -131,7 +131,7 @@ const EditProfile = () => {
               label="Email"
               //   disabled
               variant="outlined"
-              className="input"
+              className={styles.input}
               onChange={HandleEmail}
               value={email}
               InputProps={{
@@ -142,11 +142,11 @@ const EditProfile = () => {
               id="outlined-basic"
               label="username"
               variant="outlined"
-              className="input"
+              className={styles.input}
               onChange={HandleUsername}
               value={username}
             />
-            <Fab variant="extended" className="btn" type="submit">
+            <Fab variant="extended" className={styles.btn} type="submit">
               Update Profile
             </Fab>
           </div>

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import {
@@ -8,49 +9,61 @@ import {
   AiOutlineShareAlt,
 } from "react-icons/ai";
 import { FaWhatsappSquare } from "react-icons/fa";
-import { useLocation, useParams } from "react-router";
-import { Link } from "react-router-dom";
-import { AppUrl } from "../App";
-import AuthenticationContext from "../pages/Login/AuthContext";
-
-import "./styles/DetailsLeft.scss";
+import styles from "../../components/styles/DetailsLeft.module.scss";
+import AuthenticationContext from "../AuthContext";
+import RightSection from "../../components/RightSection/RightSection";
+import Footer from "../../components/Footer";
+import Headers from "../../components/Header";
+import { AppUrl } from "../_app";
 
 export default function DetailsLeftSection() {
-  const location = useLocation();
-  const getLoggedIn = window.localStorage.getItem("is_loggedIn");
-  const getAdmin = window.localStorage.getItem("is_admin");
-  const checkAdmin = getAdmin === "true" ? true : false;
-  const getUserId = window.localStorage.getItem("user_id");
+  const router = useRouter();
+    const slug = router.query.DetailsLeftSection
+console.log(router.query.name);
 
+//states declaration
+  const [getLoggedIn, setGetLoggedIn] = useState('');
+  const [getAdmin, setGetAdmin] = useState('');
+  // const [checkAdmin, setCheckAdmin] = useState('');
+  const [getUserId, setGetUserId] = useState('');
   // const [form, setForm] = useState(false);
   const [details, setDetails] = useState([]);
   const [comments, setComments] = useState([]);
   const [userComments, setUserComments] = useState("");
   const authctx = useContext(AuthenticationContext);
 
+  //get data from local storage
+  useEffect(() => {
+    setGetLoggedIn(window.localStorage.getItem("is_loggedIn"))
+    setGetAdmin(window.localStorage.getItem("is_admin"))
+    setGetUserId(window.localStorage.getItem("user_id"))
+  }, [])
+  const checkAdmin = getAdmin === "true" ? true : false;
+
+
+
   const handleInput = (e) => {
     setUserComments(e.target.value);
     console.log(userComments);
   };
-  // console.log(logged);
-  const params = useParams();
+
+  //fetching comments
   const fetchComments = async () => {
     const result = await fetch(`${AppUrl}/comments/`);
     const data = await result.json();
     setComments(data);
-    // console.log(data);
   };
 
-  const id = params.id;
-  const name = params.name;
-  // console.log(name);
+  //fetched details for
   const fetchDetails = async () => {
-    const result = await fetch(`${AppUrl}/${name}/${id}/`);
+    const result = await fetch(`${AppUrl}/${router.query.name}/${slug}/`);
     const data = await result.json();
     setDetails(data);
-    console.log(data);
+    // console.log(data);
   };
+  
 
+  //post comments
   const postComment = (e) => {
     e.preventDefault();
 
@@ -69,8 +82,7 @@ export default function DetailsLeftSection() {
     let alltwo = comments.map((comment) => comment.post === +details.id);
     // console.log(+details.id)
 
-    console.log(comments);
-    // console.log(userComments);
+    // console.log(comments);
 
     const myHeaders = new Headers();
     myHeaders.append("Authorization", `Token ${getLoggedIn}`);
@@ -90,8 +102,6 @@ export default function DetailsLeftSection() {
           .then((response) => response.text())
           .then((result) => console.log(result))
 
-          // console.log(comments);
-
           .catch((error) => console.log("error", error))
       : alert("please log in to comment");
     setUserComments("");
@@ -100,7 +110,7 @@ export default function DetailsLeftSection() {
   useEffect(() => {
     fetchDetails();
     fetchComments();
-  }, []);
+  }, [slug]);
 
   //DELETE COMMENT FUNCTION
 
@@ -115,9 +125,6 @@ export default function DetailsLeftSection() {
       body: JSON.stringify(details.id),
     });
     const data = await response.json();
-    // console.log(data);
-
-    // window.reload();
   };
 
   const deletePost = async () => {
@@ -132,7 +139,7 @@ export default function DetailsLeftSection() {
     });
     const data = await response.json();
 
-    console.log(data);
+    // console.log(data);
 
     setShowModal(true);
   };
@@ -146,9 +153,6 @@ export default function DetailsLeftSection() {
   };
 
   // const [edit, setEdit] = useState(false)
-
-  // let {detailsEdit} = useContext(AuthenticationContext)
-
   const editPost = async () => {
     const response = await fetch(`${AppUrl}/posts/${details.slug}`, {
       method: "GET",
@@ -165,28 +169,34 @@ export default function DetailsLeftSection() {
     console.log(data);
   };
   return (
-    <div className="detailsLeftSection">
+    <>
+       <Headers /> 
+      <div className={styles.mainSection}>
+
+        <div className={styles.leftSection}>
+      
+    <div className={styles.detailsLeftSection}>
       <Helmet>
         <title> category</title>
         <meta name={details.description} content="Helmet application" />
       </Helmet>
-      <div className="headline">
+      <div className={styles.headline}>
         <img src={details?.image} alt="details-img" />
-        <div className="navigate">
+        <div className={styles.navigate}>
           <a href="/">
             <p>Home</p>
-          </a>{" "}
+          </a>
           <AiOutlineRight />
           <a href="/">
             <p>Fashion</p>
-          </a>{" "}
+          </a>
           <AiOutlineRight />
           <a href="/">
             <p>Photoraphy</p>
           </a>
         </div>
         <h1>{details?.title}</h1>
-        <div className="comment">
+        <div className={styles.comment}>
           <p>0</p>
           <p> {details.owner}</p>
           <p>
@@ -194,106 +204,25 @@ export default function DetailsLeftSection() {
           </p>
         </div>
       </div>
-      <div className="content">
+      <div className={styles.content}>
+
         <p>
-          {details?.description}
-          <br /> <br />
-          Aenean donec nisi da ukraine joan senectus lander gotze vel. History
-          molestie morgan turpis vel iniesta da searches. Global athletes
-          feugiat fusce rivers pellentesque cowell. Aenean donald rhoncus watch
-          eget, germany sagittis convallis. Walking egestas chile searches
-          phelps mi ut searches rodriguez et watching. Bucket cube vestibulum
-          temple act ridiculus wurst vel. Schumacher ipad gabriel interdum
-          conchita wurst enim mi bowl. Air curabitur consequat love portugal
-          etiam berlin winter watch. Brazil plus suarez moto phelps sapien
-          imperdiet world fames. Neque videos cowell malaysia puppy cras
-          tristique, battles amal vestibulum.
+          {details.description}
         </p>
-        {/* <div className="img-to-left"> */}
-        <p className="img-to-left">
-          <img
-            src="https://3.bp.blogspot.com/-DrQcd8h-Mz4/VLuu5jKseHI/AAAAAAAAJMw/Linw83uBvo4/s1600/travel_lost-memory-of-childhood_159K.jpg"
-            alt=""
-          />
-          Nisl nibh watching lectus one kardashian global penatibus. Nisi philip
-          donec mi nec ligula gravida robotic fames blandit fusce. Fringilla
-          athletes talent bibendum, kiss ante giant. Joan adipiscing maecenas
-          nexus while vestibulum urna enim. Budweiser mcconaughey audrey
-          maecenas integer lorem amal quam. Integer sherman lawrence
-          pellentesque jules, vel duis neque. Schumacher matthew proin, day air
-          rap rubik lawrence loss ochoa. Cursus venenatis alamuddin love
-          pharetra, vitae blind football. rap rubik lawrence loss ochoa. Cursus
-          venenatis alamuddin love pharetra, vitae blind football. rap rubik
-          lawrence loss ochoa. Cursus venenatis alamuddin love pharetra, vitae
-          blind football.
-        </p>
-        <br />
-        <p>
-          Porttitor venenatis lorem sagittis mauris lander mutant. Feugiat the
-          jared golden consectetur ante sodales integer nexus enim. Ridiculus
-          facilisis quis molestie libero videos rooney trial while. Baby galaxy
-          sapien brazil consequat lectus mauris facilisis sed nokia. Silva sochi
-          malaysia love away euismod world electronics aliquam.
-        </p>{" "}
-        <br />
-        <p className="img-to-right">
-          <img
-            src="https://2.bp.blogspot.com/-WpLeRc2UJdk/VLuudjzKBPI/AAAAAAAAJH8/w9VT4M0E1uM/s1600/fashion_accident-in-love_054K.jpg"
-            alt=""
-          />
-          Mi donec blind suspendisse more seymour cristina mcconaughey. Rubik
-          scotish ac gabriel world placerat jared pharetra wardega goku.
-          Vulputate rodriguez quis bibendum proin fringilla phasellus.
-          Commercial placerat bucket lorem malesuada sem note venenatis. Rooney
-          challenge cube ipsum one gaza potenti joan praesent day commercial.
-          Winner id pistorius is integer shirley tristique more francisco.
-          History fusce rivers renee euismod attack news erat attack ultrices.
-          Fermentum ferguson eget urna super praesent massa leto suscipit.
-        </p>
-        <p>
-          Richard robin mutant suor audrey superman ullamcorper ramis nunc nunc.
-          Montes lander maya ipsum rap joan gravida enim suor. Crimea test jared
-          santos suspendisse lorem loss sociis commercial. Watch tortor
-          ridiculus gabriel nunc scotish vestibulum doodles berlin. Samsung nam
-          airlines consectetur fringilla leto iniesta facilisi maecenas.
-          Facilisi molestie orci rubik proin hepburn rap sem argentina bucket
-          pistorius. Guillermo pharetra eros nascetur vulputate als spider act
-          blandit.
-        </p>
-        <img
-          src="https://3.bp.blogspot.com/-95W5_fJloi0/VLuuO9DEb_I/AAAAAAAAJFs/wSt9rh64j-4/s1600/archi_kitchen-combine-multi-spaces_183K.jpg"
-          alt=""
-        />
-        <p>
-          Bend nokia natoque blandit donec, natoque consectetur pretium. Fusce
-          ibrahimovic penatibus dapibus luis leo sa richard consectetur diam.
-          Fusce cristina dictum lorem phelps ligula duis leo lauren hepburn da.
-          Suarez football ice while israel parturient, bars germany duis da.
-          Tempus augue shirley mandela sit porta, justo ac boss.
-        </p>
+
       </div>
-      <div className="share-container">
-        <div className="" style={{ display: "flex", alignItems: "center" }}>
-          <div>
+      <div className={styles.share_container}>
+        <div className={styles.share}>
             <AiOutlineShareAlt />
-          </div>
-          <div>
-            <p style={{ marginBottom: 0 }}> SHARE:</p>
-          </div>
-          <div>
+            <p> SHARE:</p>
             <AiFillTwitterSquare style={{ height: "20px" }} />
-          </div>
-          <div>
             <AiFillFacebook />
-          </div>
-          <div>
             <FaWhatsappSquare />
-          </div>
         </div>
         <input placeholder="https://magonedemo.blogspot.com/2015/06/neque-adipiscing-varius-peo" />
       </div>
-      <div className="comment-section">
-        <span className="comment-section-header">
+      <div className={styles.comment_section}>
+        <span className={styles.comment_section_header}>
           <h4>
             <i class="fa-solid fa-comments"></i> COMMENTS
           </h4>
@@ -302,35 +231,35 @@ export default function DetailsLeftSection() {
         {comments.map((comment) => {
           if (comment.post === +details.id) {
             return (
-              <div className="comments" key={comment.id}>
-                <div className="avi">
+              <div className={styles.comments} key={comment.id}>
+                <div className={styles.avi}>
                   <img
                     src="https://2.bp.blogspot.com/-c44zyXSkI_k/U4gCFGyzluI/AAAAAAAALMo/1_za8Y2XbzU/s35/MTavatar.png"
                     alt=""
                   />
                 </div>
 
-                <div className="comment-details">
-                  <span className="username-date">
-                    <p className="bold pointer">{comment.owner}</p>
+                <div className={styles.comment_details}>
+                  <span className={styles.username_date}>
+                    <p className={styles.bold } >{comment.owner}</p>
                     {/* <p className="date pointer">{comment.created_at}</p> */}
                   </span>
 
-                  <p className="comment">{comment.body}</p>
+                  <p className={styles.comment}>{comment.body}</p>
                   {/* <p className="comment">{userComments}</p> */}
 
                   <span>
                     {+getUserId === comment.owner_id ||
                     getUserId === comment.owner_id ? (
-                      <div className="edit_delete">
+                      <div className={edit_delete}>
                         <p
-                          className="del-comment"
+                          className={styles.del_comment}
                           onClick={() => deleteComment(comment.id)}
                         >
                           Delete
                           <i class="fa-sharp fa-solid fa-trash"></i>
                         </p>
-                        <p className="edit_comment">
+                        <p className={styles.edit_comment}>
                           Edit <i class="fa-solid fa-pen-to-square"></i>
                         </p>
                       </div>
@@ -344,14 +273,14 @@ export default function DetailsLeftSection() {
           }
         })}
 
-        <div className="input-comment">
+        <div className={styles.input_comment}>
           <h3>Enter Comment</h3>
-          <form className="comment-form" onSubmit={postComment}>
-            <div className="input">
+          <form className={styles.comment_form} onSubmit={postComment}>
+            <div className={styles.input}>
               <img
                 src="https://2.bp.blogspot.com/-c44zyXSkI_k/U4gCFGyzluI/AAAAAAAALMo/1_za8Y2XbzU/s35/MTavatar.png"
                 alt=""
-                className="user-avi"
+                className={styles.user_avi}
               />
               <input
                 placeholder="comment"
@@ -364,14 +293,14 @@ export default function DetailsLeftSection() {
         </div>
 
         {+getUserId === details.owner_id || getUserId === details.owner_id ? (
-          <div className="edit_delete">
-            <p className="del_comment" onClick={deletePost}>
+          <div className={styles.edit_delete}>
+            <p className={styles.del_comment} onClick={deletePost}>
               Delete Post
               <i class="fa-sharp fa-solid fa-trash"></i>
             </p>
             <Link to={`/dashboard/edit-post/${details.slug}`}>
               <p
-                className="edit_comment"
+                className={styles.edit_comment}
                 // onClick={editPost}
               >
                 Edit Post<i class="fa-solid fa-pen-to-square"></i>
@@ -398,5 +327,16 @@ export default function DetailsLeftSection() {
         
         </> */}
     </div>
+    </div>
+
+    <div className={styles.rightSection}>
+          <RightSection />
+        </div>
+
+        <div className={styles.footer}>
+      </div>
+    </div>
+        <Footer />
+    </>
   );
 }

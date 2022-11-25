@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AppUrl } from '../../App'
 import Dashboard from './Dashboard'
-import './DashboardStyles/Categories.scss'
+import styles from './DashboardStyles/Categories.module.scss'
 
 
 export default function Categories() {
@@ -49,10 +49,10 @@ fetchCategories()
     <div>
 
       <h3>List of Categories</h3>
-      <div className='categories'>
+      <div className={styles.categories}>
         {categories.map(category=>{
           return (
-            <div className='category' key={category.id}>
+            <div className={styles.category} key={category.id}>
         <p>{category.name}</p>
         </div>
           )
@@ -61,7 +61,7 @@ fetchCategories()
 
       <form onSubmit={addCategory}>
         <input placeholder='enter Category' onChange={handleInput}/>
-        <button className='add_category'>Add category +</button>
+        <button className={styles.add_category}>Add category +</button>
       </form>
     </div>
     </Dashboard>

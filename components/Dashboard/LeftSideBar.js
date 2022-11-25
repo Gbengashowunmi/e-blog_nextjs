@@ -1,33 +1,41 @@
-import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import AuthenticationContext from "../Login/AuthContext";
-import "./DashboardStyles/LeftSideBar.scss";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useContext, useEffect, useState } from "react";
+import AuthenticationContext from "../../pages/AuthContext";
+// import { Link, useNavigate } from "react-router-dom";
+import styles from "./DashboardStyles/LeftSideBar.module.scss";
 
 export default function LeftSideBar() {
   // const [highlight, setHighlight] = useState(false);
 
-  const getAdmin = window.localStorage.getItem("is_admin");
-  const getLoggedIn = window.localStorage.getItem("is_loggedIn");
-  const checkAdmin = getAdmin === "true" ? true : false;
+  //useRouet declaration
+  const router = useRouter();
 
-  // const handleClick = () => {
-  //   setHighlight(prev => !prev);
-  // };
+  //setting states for window storage to be used inside useEffect
+  const [getAdmin, setGetAdmin] = useState("");
+  const [getLoggedIn, setGetLoggedIn] = useState();
+
+  useEffect(() => {
+    setGetAdmin(window.localStorage.getItem("is_admin"));
+    setGetLoggedIn(window.localStorage.getItem("is_loggedIn"));
+  }, []);
+
+const checkAdmin = getAdmin === "true"? true : false;
+  
   const authctx = useContext(AuthenticationContext);
-  const navigate = useNavigate();
   const LogOut = () => {
     authctx.logout();
-    navigate("/");
     window.localStorage.clear();
+    router.push("/");
   };
 
   // console.log(authctx.is_admin)
 
   return (
-    <div className="leftSideBar">
-      <div className="menu">
-        <Link to="/">
-          <div className="span">
+    <div className={styles.leftSideBar}>
+      <div className={styles.menu}>
+        <Link href="/">
+          <div className={styles.span}>
             <p>
               <i class="fa-solid fa-house-user"></i>
             </p>
@@ -35,8 +43,8 @@ export default function LeftSideBar() {
           </div>
         </Link>
 
-        <Link to="/dashboard/create-post">
-          <div className="span">
+        <Link href="/dashboard/WriteBlog">
+          <div className={styles.span}>
             <p>
               <i class="fa-regular fa-file-lines icon"></i>
             </p>
@@ -45,8 +53,8 @@ export default function LeftSideBar() {
         </Link>
 
         {checkAdmin ? (
-          <Link to="/dashboard/posted-blogs">
-            <div className="span">
+          <Link href="/dashboard/posted-blogs">
+            <div className={styles.span}>
               <p>
                 <i class="fa-regular fa-file-lines icon"></i>
               </p>
@@ -54,8 +62,8 @@ export default function LeftSideBar() {
             </div>
           </Link>
         ) : (
-          <Link to="/dashboard/user-posts">
-            <div className="span">
+          <Link href="/dashboard/Posts">
+            <div className={styles.span}>
               <p>
                 <i class="fa-regular fa-file-lines icon"></i>
               </p>
@@ -64,8 +72,8 @@ export default function LeftSideBar() {
           </Link>
         )}
         {checkAdmin ? (
-          <Link to="/dashboard/categories">
-            <div className="span">
+          <Link href="/dashboard/categories">
+            <div className={styles.span}>
               <p>
                 <i class="fa-regular fa-file-lines icon"></i>
               </p>
@@ -73,7 +81,7 @@ export default function LeftSideBar() {
             </div>
           </Link>
         ) : (
-          <div className="span">
+          <div className={styles.span}>
             <p>
               <i class="fa-solid fa-file icon"></i>
             </p>
@@ -84,8 +92,8 @@ export default function LeftSideBar() {
         {checkAdmin ? (
           ""
         ) : (
-          <Link to="/dashboard/media">
-            <div className="span">
+          <Link href="/dashboard/Media">
+            <div className={styles.span}>
               <p>
                 <i class="fa-regular fa-images icon"></i>
               </p>
@@ -97,8 +105,8 @@ export default function LeftSideBar() {
         {checkAdmin ? (
           ""
         ) : (
-          <Link to="/dashboard/team">
-            <div className="span">
+          <Link href="/dashboard/team">
+            <div className={styles.span}>
               <p>
                 <i class="fa-solid fa-people-group icon"></i>
               </p>
@@ -109,8 +117,8 @@ export default function LeftSideBar() {
         {checkAdmin ? (
           ""
         ) : (
-          <Link to="/dashboard/profile">
-            <div className="span">
+          <Link href="/dashboard/Profile">
+            <div className={styles.span}>
               <p>
                 <i class="fa-regular fa-circle-user icon"></i>
               </p>
@@ -121,8 +129,8 @@ export default function LeftSideBar() {
         {checkAdmin ? (
           ""
         ) : (
-          <Link to="/dashboard/terms">
-            <div className="span">
+          <Link href="/dashboard/Terms">
+            <div className={styles.span}>
               <p>
                 <i class="fa-solid fa-people-group icon"></i>
               </p>
@@ -131,7 +139,7 @@ export default function LeftSideBar() {
           </Link>
         )}
       </div>
-      <div className="span" onClick={LogOut}>
+      <div className={styles.span} onClick={LogOut}>
         <p>
           <i class="fa-solid fa-right-from-bracket"></i>
         </p>

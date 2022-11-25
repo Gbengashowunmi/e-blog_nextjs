@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineRight, AiTwotoneCalendar } from "react-icons/ai";
 import Link from "next/link";
-import { AppUrl } from "../pages/index";
 import styles from "./styles/Tech.module.scss";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import { AppUrl } from "../pages/_app";
+import useFetch from "./useFetch";
 // import { useLocation } from '@reach/router';
 
 // Aos.init({
@@ -12,19 +13,7 @@ import Aos from "aos";
 // });
 
 export default function Tech({category}) {
-  const [techNews, setTechNews] = useState([]);
-
-  const fetchPost = async () => {
-    const response = await fetch(`${AppUrl}/posts/`);
-    const data = await response.json();
-    setTechNews(data);
-    // console.log(data);
-  };
-
-  useEffect(() => {
-    fetchPost();
-  }, []);
-  // console.log(techNews[0].title);
+  const {data} = useFetch(`${AppUrl}/news/`)
 
   return (
     <div
@@ -47,16 +36,15 @@ export default function Tech({category}) {
         </Link>
       </span>
       <div className={styles.tech_items}>
-        {techNews.map((eachNews) => {
-          // console.log(eachNews);
+        {data.map((eachNews) => {
+          if(eachNews.category.name === 'Tech'){
           return (
             <>
               <div className={styles.tech_item} key={eachNews.id}>
                 {/* <Link href={`detail/${eachNews.id}`}> <div className={styles.image-container'> */}
-
                 <Link
-                  href={`detail/${eachNews.slug}/posts`}
-                  state={{ data: "posts" }}
+                  href={{pathname:`Details/${eachNews.slug}/`, query:{name:'news'}}}
+                  // state={{ data: "posts" }}
                 >
                   {/* <div className={styles.overlay'></div> */}
                   <div className={styles.image_container}>
@@ -79,7 +67,8 @@ export default function Tech({category}) {
                 {/* <div className={styles.advert}>Place Your Advert here</div> */}
               </div>
             </>
-          );
+          )
+          }
         })}
       </div>
     </div>

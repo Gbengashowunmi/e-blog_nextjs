@@ -27,10 +27,10 @@
 }
 .rightSection {
   // width: 38%;
-  height: 95vh;
+  height: fit-content;
    margin-bottom: 2rem;
-   position: fixed;
-   right: 0;
+  //  position: fixed;
+  //  right: 0;
   // border: 2px solid blue;
 
 }
@@ -70,7 +70,7 @@
     height: auto;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 0.3rem;
+    padding: 0.6rem 1rem;
   }
   .leftSection {
     width: 100%;

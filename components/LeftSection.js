@@ -12,8 +12,8 @@ import styles from "./styles/leftSection.module.scss";
 import filterbtnstyles from './styles/FilterBtn.module.scss'
 
 import Tech from "./Tech";
-import { AppUrl } from "../pages/index";
 import { ThreeDots } from "react-loader-spinner";
+import { AppUrl } from "../pages/_app";
 // import Travel from "./Travel";
 
 
@@ -28,7 +28,7 @@ const [showCategory, setShowCategory] = useState('Sports')
 const [loading, setLoading] = useState(false)
 const [state, setState] = useState('')
 
-
+//fetching button categroies
 const fetchCategories = async () => {
 setLoading(true);
   const result = await fetch(`${AppUrl}/categories/`);
@@ -41,15 +41,14 @@ setLoading(true);
 useEffect(()=>{
 fetchCategories()
 },[])
+//fetching button categroies ends here
+
 
 const handleBtns =(e)=>{
   setCat(e.target.value);
-// console.log(cat);
 categories.map(category=>{
   setCategory([category])
   cat === category.name?console.log(category.name, 'category matched'): console.log('unknown');
-  // cat === category.name?
-  
 }
 )}
 
@@ -83,11 +82,10 @@ categories.map(category=>{
     <div className={styles.left_ads}>New ADVERTISEMENT
     <i className="fa-solid fa-xmark cancel_btn"></i>
       </div>
-      <Fashion/>
+      {/* <Fashion/> */}
       <Readers/>
       <PoliticsScience/>
       <Architect/>
-      {/* <DetailsLeftSection /> */}
     </div>
   );
 }

@@ -7,8 +7,11 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  .span {
+  .span { 
     width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: orangered;
     p{
       transition: .7s;
     }
@@ -36,13 +39,14 @@
       width: 40%;
       height: 100%;
       object-fit: cover;
-    //   border: 2px solid rgb(104, 87, 87);
+      // border: 2px solid rgb(104, 87, 87);
+      border-radius: 5px;
 
     }
     .read_info {
       width: 63%;
       height: 100%;
-    //   border: 2px solid red;
+      // border: 2px solid red;
       font-size: smaller;
       // padding: .3rem;
       line-height: 1rem;

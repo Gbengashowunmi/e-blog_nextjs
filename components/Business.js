@@ -6,10 +6,13 @@ import styles from './styles/business.module.scss'
 import AOS from 'aos';
 // import 'aos/dist/aos.css';
 import Link from "next/link";
-// import { Link } from "react-router-dom";
+import useFetch from "./useFetch";
+import { AppUrl } from "../pages/_app";
 // AOS.init();
 
 export default function Business(){
+  const { data } = useFetch(`${AppUrl}/posts/`)
+
     return (
             <div className={styles.businessSection} >
             <header>

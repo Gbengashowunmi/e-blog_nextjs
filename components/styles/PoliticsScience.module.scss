@@ -1,24 +1,45 @@
-    .politics{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        gap: 1rem;
-        height: fit-content;
-        // border: 2px solid orange;
-    
+.politics_science {
+  // border: 2px solid red;
+  width: 100%;
+  height: fit-content;
+  margin-top: 0.8rem;
+  span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: orangered;
+    margin-top: 20px;
+    p {
+      transition: 0.7s;
     }
-
-
-@media (max-width:790px) {
-    
-    .politics{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: space-between;
-        gap: 1rem;
-        height: fit-content;
-        // border: 2px solid orange;
-    
+    p:hover {
+      cursor: pointer;
+      color: rgb(190, 56, 7);
+      transition: 0.7s;
     }
+  }
+}
+.politics {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 1rem;
+    align-items: center;
+    height: fit-content;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // border: 2px solid orange;
+}
+
+@media (max-width: 790px) {
+  .politics {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    height: fit-content;
+    // border: 2px solid orange;
+  }
 }

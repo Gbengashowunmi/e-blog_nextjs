@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Link from "next/link";
-import styles from "../mike/login.module.scss";
+import styles from "./login.module.scss";
 import { Oval } from "react-loader-spinner";
 import AuthenticationContext from "../AuthContext";
 import { AppUrl } from "../_app";
@@ -20,7 +20,7 @@ export default function LoginPage() {
   });
 
   //set password visibility state
-  // const [see, setSee] = useState(false)
+  const [see, setSee] = useState(false);
 
   const HandleInput = (e) => {
     setInput({
@@ -34,7 +34,7 @@ export default function LoginPage() {
   const [visibility, setVisibility] = useState(false);
   const HandleSee = () => {
     console.log("show password");
-    // setSee(prev => !prev)
+    setSee((prev) => !prev);
     setVisibility((prev) => !prev);
   };
 
@@ -60,7 +60,7 @@ export default function LoginPage() {
       });
       const data = await response.json();
 
-      // setLoading(false)
+      setLoading(false);
       console.log(data);
       if (data.failure) {
         setError(data.failure);
@@ -69,17 +69,23 @@ export default function LoginPage() {
       // console.log(error);
       // data.respone?
 
-      // if (data.token) {
-      //   authctx.login(data.token, data.first_name, data.id, data.is_admin, data.email);
-      //   window.localStorage.setItem('is_loggedIn', data.token);
-      //   window.localStorage.setItem('is_admin', data.is_admin);
-      //   window.localStorage.setItem('first_name', data.first_name);
-      //   window.localStorage.setItem('user_id', data.id);
-      //   window.localStorage.setItem('email', data.email);
-      //   const firstName = window.localStorage.getItem('first_name');
-      //   toast.success(`Welcome back ${firstName}😀`)
-      //   navigate("/");
-      // }
+      if (data.token) {
+        authctx.login(
+          data.token,
+          data.first_name,
+          data.id,
+          data.is_admin,
+          data.email
+        );
+        window.localStorage.setItem("is_loggedIn", data.token);
+        window.localStorage.setItem("is_admin", data.is_admin);
+        window.localStorage.setItem("first_name", data.first_name);
+        window.localStorage.setItem("user_id", data.id);
+        window.localStorage.setItem("email", data.email);
+        const firstName = window.localStorage.getItem("first_name");
+        toast.success(`Welcome back ${firstName}😀`);
+        router.push("/");
+      }
       // console.log(data, data.token);
       // console.log(input);
     }
@@ -90,12 +96,6 @@ export default function LoginPage() {
       <button onClick={() => router.push("/")} className={styles.home_btn}>
         Go Home
       </button>
-
-      {/* <Formik
-        initialValues={{ email: "", password: "", name:"" }}
-        validateSchema={schema} 
-        onSubmit={HandleSubmit}
-      > */}
 
       <form className={styles.login_form} onSubmit={HandleSubmit}>
         <h3>Log Here</h3>
@@ -154,7 +154,6 @@ export default function LoginPage() {
           </p>
         </span>
       </form>
-      {/* </Formik> */}
     </div>
   );
 }

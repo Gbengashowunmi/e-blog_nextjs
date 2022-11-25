@@ -3,10 +3,19 @@ import Carousel from 'react-bootstrap/Carousel';
 import { ThreeDots } from 'react-loader-spinner';
 // import { Link } from 'react-router-dom';
 import Link from 'next/link';
-import { AppUrl } from '../pages/index';
+import { useRouter } from 'next/router'
+
 import styles from '../components/styles/carousel.module.scss'
+import { AppUrl } from '../pages/_app';
 
 export default function ControlledCarousel() {
+
+  const router = useRouter()
+  const { pid } = router.query
+
+  // console.log(pid);
+
+  //setting states
   const [index, setIndex] = useState(0);
   const [carouselDetails, setCarouselDetails] = useState([])
   const [loading, setLoading] = useState(false)
@@ -16,15 +25,16 @@ export default function ControlledCarousel() {
     setIndex(selectedIndex);
   };
 
+  //fetching carousel details
   const fetchCarouselDetails = async()=> {
 setLoading(true);
-
     const result = await fetch(`${AppUrl}/slider/`)
     const data = await result.json()
     setCarouselDetails(data)
     console.log(data)
   }
   
+  //loading time out
   setTimeout(() => {
     setLoading(false)
     },1500);
@@ -32,6 +42,9 @@ setLoading(true);
   useEffect(()=>{
     fetchCarouselDetails();
   },[])
+
+
+
   return (loading?<ThreeDots 
     height="80" 
     width="80" 
@@ -59,9 +72,8 @@ setLoading(true);
           <p className={styles.description_text}>
             {carouselDetail.description.slice(0,120)}...
           </p>
-          <Link href={`/detail/${carouselDetail.slug}/slider`} state={{data:'slider'}}  >
-          <button className={styles.read_more}>READ MORE</button>
-          </Link>
+
+        <Link href={{pathname:`Details/${carouselDetail.slug}/`, query:{name:'slider'}}}>  <button className={styles.read_more}>READ MORE</button></Link>
 
         </Carousel.Caption>
       </Carousel.Item>

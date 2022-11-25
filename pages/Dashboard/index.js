@@ -1,10 +1,9 @@
 import React from 'react'
 import Dashboard from '../../components/Dashboard/Dashboard';
-
-export default function Media() {
+export default function index() {
   return (
-    <Dashboard>
-      <div>Media</div>
-    </Dashboard>
+    <div>
+<Dashboard/>
+    </div>
   )
 }

@@ -3,7 +3,7 @@ import { Oval } from "react-loader-spinner";
 import Link from "next/link";
 import InputPassword from "../Login/InputPassword";
 // import AuthenticationContext from "./AuthContext";
-import styles from  "../mike/login.module.scss";
+import styles from  "../signin/login.module.scss";
 // import Modal from "./ModalComponent";
 // import ModalComponent from "./ModalComponent";
 import { AppUrl } from "../_app";
@@ -203,7 +203,7 @@ export default function SignUp() {
         </button>
         <span>
           <p>
-            have an account? <Link href="mike">Log in</Link>
+            have an account? <Link href="signin">Log in</Link>
           </p>
         </span>
       </form> : 

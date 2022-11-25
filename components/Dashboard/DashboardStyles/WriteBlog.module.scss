@@ -1,20 +1,21 @@
+$deepBlue: rgb(2, 2, 56);
 
-        
-        $deepBlue: rgb(2, 2, 56);
+
 .writeBlog {
   width: 100%;
   height: fit-content;
-
   // border: 2px solid yellow;
   .header{
+  // border: 2px solid yellow;
+
     text-align: center;
     color:$deepBlue;
     height: fit-content;
     padding: .5rem 0;
-  // border: 2px solid yellow;
-
-
-    // margin: auto;
+  box-shadow: 1px 2px 6px rgba(179, 176, 176, 0.651);
+  z-index: 100;
+  font-size: 1.8rem;
+    margin: auto;
   }
   .blogpreview {
     width: 100%;
@@ -37,13 +38,15 @@
         padding: 0.3rem 1rem;
         border-radius: 5px;
         border: 0.5px solid rgb(104, 97, 97);
+        cursor: pointer;
       }
       .save {
         background-color:$deepBlue;
         color: white;
         border-radius: 5px;
         border: 0.5px solid white;
-        padding: 0.3rem 1rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
       }
       .save:hover{
         background-color: $deepBlue;
@@ -63,7 +66,7 @@
     //   width: ;
     // }
   }
-  .text-area {
+  .text_area {
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -78,10 +81,11 @@
     background-color: rgb(236, 238, 240);
     .title {
       border-radius: 5px;
-      padding-left: 1rem;
-      // outline: .2px solid grey;
       border: 1px solid grey;
       outline: none;
+        // border: 2px solid red;
+        padding:.5rem ;
+
     }
     
      
@@ -100,24 +104,19 @@
         width: 60%;
         height: auto;
       }
-      .ql-editor{
-        background-color: white;
-        min-height:10rem ;
-        height: fit-content;
-        // border: 2px solid red;
 
-      }
     }
 
       
-    .submit-btn {
+    .submit_btn {
       width: fit-content;
       margin: auto;
-      padding: 0.3rem 1rem;
+      padding: 0.5rem 1rem;
       background-color: $deepBlue;
       color: white;
       border-radius: 5px;
       border: 0.5px solid rgb(104, 97, 97);
+      cursor: pointer;
     }
   }
 }
@@ -140,7 +139,7 @@
       padding: 1rem;
       gap: .5rem;
     }
-    .text-area {
+    .text_area {
       display: flex;
       flex-direction: column;
       padding: 2rem;

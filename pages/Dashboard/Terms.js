@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "./Dashboard";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 export default function Terms() {
   return (

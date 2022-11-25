@@ -17,7 +17,8 @@
       background-color: orangered;
       border-radius: 5px;
       color: white;
-  
+  padding: .5rem 1rem;
+  cursor: pointer;
     }
   }
   
@@ -73,7 +74,7 @@
       background-color: mix( orangered,  black,  4.5);
       // color: orangered;
       // border: 0.5px solid black;
-  
+  cursor: pointer;
       transition: 0.8s;
     }
     p {

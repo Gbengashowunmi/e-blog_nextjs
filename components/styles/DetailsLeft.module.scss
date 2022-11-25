@@ -1,5 +1,72 @@
+.mainSection {
+  background-color: rgb(243, 243, 243);
+  // border: 2px solid blue;
+  width: 100%;
+  // display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 1rem;
+  // height: auto;
+  padding: 2rem;
+  position: relative;
+  .up_btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    display: block;
+  }
+  .footer {
+    width: 100%;
+    // border: 2px solid blue;
+  }
+}
+.leftSection{
+  width: 100%;
+  // border: 2px solid blue;
+  
+}
+
+// .rightSection {
+//   // width: 38%;
+//   height: fit-content;
+//    margin-bottom: 2rem;
+//   //  position: fixed;
+//   //  right: 0;
+//   // border: 2px solid blue;
+
+// }
+.ads {
+  width: 100vw;
+  height: 6rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 68, 0, 0.685);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  z-index: 99;
+  color: white;
+  opacity: 0;
+  transition: 1s;
+  .cancel_btn {
+    position: fixed;
+    top: 0.3rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}
+
+.show_ads {
+  opacity: 1;
+  transition: 1s;
+}
 .detailsLeftSection {
-  width: 90%;
+  width: 100%;
   margin: auto;
   overflow: auto;
   // text-align: center;
@@ -7,16 +74,19 @@
   // height: fit-content;
   img {
     width: 100%;
+    border-radius: 10px;
   }
   .content {
     border-bottom: 1px solid grey;
+    p{
+      word-spacing: 4px;
+      line-height: 25px;
+    }
   }
   .headline {
     width: 100%;
-    // padding-bottom: 2rem;
-    // line-height: 2rem;
     height: fit-content;
-    // border-bottom: 2px solid grey;
+    // border: 2px solid grey;
     img {
       width: 100%;
       height: auto;
@@ -24,6 +94,7 @@
     .navigate {
       display: flex;
       align-items: center;
+      height: fit-content;
       // height: fit-content;
       // border: 2px solid blue;
       // background-color: yellow;
@@ -44,11 +115,20 @@
     .comment {
       display: flex;
       // border: 2px solid red;
-      width: 33%;
+      width: fit-content;
       justify-content: space-between;
+      gap: 10px;
+      height: fit-content;
+      color: red;
+      p {
+        line-height: 0;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+      }
     }
   }
-  .img-to-left {
+  .img_to_left {
     width: 100%;
     img {
       width: 13rem;
@@ -56,7 +136,7 @@
       padding-right: 1rem;
     }
   }
-  .img-to-right {
+  .img_to_right {
     width: 100%;
     // border: 2px solid blue;
     img {
@@ -65,38 +145,40 @@
       padding-left: 1rem;
     }
   }
-  .share-container {
+  .share_container {
     width: 100%;
     padding: 1rem 1rem;
     // border-top:1px solid grey ;
-      // border: 2px solid yellow;
-      margin-bottom:  1.5rem;
+    // border: 2px solid yellow;
+    margin-bottom: 1.5rem;
 
     border-bottom: 1px solid grey;
     .share {
       width: 35%;
       // border: 2px solid yellow;
       display: flex;
-      // align-items: center;
-      justify-items: center;
+      height: fit-content;
+      align-items: center;
+      justify-items: space-between;
+      gap: 10px;
     }
 
     input {
       width: 100%;
     }
   }
-  .comment-section {
+  .comment_section {
     width: 100%;
     // border: 2px solid red;
     margin-top: 1rem;
-    .comment-section-header {
+    .comment_section_header {
       width: 100%;
       display: flex;
       justify-content: left;
       gap: 1rem;
       color: black;
     }
-    .reply-comments {
+    .reply_comments {
       width: 90%;
       display: flex;
       justify-content: right;
@@ -125,31 +207,31 @@
           // height:100%;
         }
       }
-      .comment-details {
+      .comment_details {
         width: 80%;
         // border: 2px solid yellow;
-        .username-date {
+        .username_date {
           display: flex;
           justify-content: left;
           gap: 1rem;
         }
 
-        .del-comment{
+        .del_comment {
           cursor: pointer;
           color: rgb(224, 48, 16);
           border: none;
         }
       }
     }
-    .input-comment{
+    .input_comment {
       width: 100%;
       // height: fit-content;
       // border: 2px solid blue;
       padding: 1rem;
       background-color: white;
       border-radius: 8px;
-      box-shadow: 2px 2px 2px grey;
-      .comment-form{
+      // box-shadow: 2px 2px 2px grey;
+      .comment_form {
         width: 100%;
         height: fit-content;
         // border: 2px solid red;
@@ -157,57 +239,58 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 2rem;
-        .input{
+        .input {
           display: flex;
           width: 100%;
           // border: 2px solid grey;
           align-items: center;
-          .user-avi{
+          .user_avi {
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
             margin-right: 1rem;
           }
-          input{
-            &:focus { 
+          input {
+            &:focus {
               outline: none !important;
-              }
+            }
             width: 100%;
             height: 50%;
             border: none;
             border-bottom: 1px solid grey;
           }
         }
-button{
-  margin: auto;
-  cursor: pointer;
-  border: none;
-  background-color: orangered;
-  color: white;
-  border-radius: 8px;
-  padding: .2rem 1rem;
-}
-button:hover{
-  background-color: rgb(199, 58, 7);
-
-}
+        button {
+          margin: auto;
+          cursor: pointer;
+          border: none;
+          background-color: orangered;
+          color: white;
+          border-radius: 8px;
+          padding: 0.2rem 1rem;
+        }
+        button:hover {
+          background-color: rgb(199, 58, 7);
+        }
       }
     }
-    .edit_delete{
+    .edit_delete {
       display: flex;
       width: fit-content;
       height: fit-content;
       gap: 2rem;
       margin-top: 1rem;
       // background-color: red ;
-      .del_comment,.edit_comment{
+      .del_comment,
+      .edit_comment {
         cursor: pointer;
         color: rgb(224, 48, 16);
         // background-color: red;
         border: none;
         cursor: pointer;
       }
-      .del_comment:hover,.edit_comment:hover{
+      .del_comment:hover,
+      .edit_comment:hover {
         color: rgb(173, 31, 6);
       }
     }
@@ -219,4 +302,36 @@ button:hover{
 }
 .pointer {
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .mainSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  .leftSection {
+    width: 100%;
+    // border: 2px solid yellow;
+    padding: 1rem;
+  }
+  .rightSection {
+    // border: 2px solid red;
+    width: 100%;
+    height: fit-content;
+  }
+  .detailsLeftSection {
+    .headline {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.hide {
+  display: none;
 }
