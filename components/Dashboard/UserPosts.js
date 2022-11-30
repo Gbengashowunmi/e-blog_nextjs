@@ -6,7 +6,7 @@ import "../../components/styles/Reader.scss";
 import './DashboardStyles/Post.scss'
 
 import { AppUrl } from "../../App";
-import AuthenticationContext from "../Login/AuthContext";
+import AuthenticationContext from "../../components/AuthContext";
 import { ThreeCircles, ThreeDots } from "react-loader-spinner";
 
 export default function UserPosts() {

@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from "react";
-import Dashboard from "./Dashboard";
+import Dashboard from "../../components/Dashboard/Dashboard";
 import TextField from "@mui/material/TextField";
-import "./DashboardStyles/EditProfile.module.scss";
+import styles from "../../components/Dashboard/DashboardStyles/EditProfile.module.scss";
 import Fab from "@mui/material/Fab";
-import { AppUrl } from "../../App";
+import { AppUrl } from "../_app";
 
 const EditProfile = () => {
   const [first_name, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [getLoggedIn, setGetLoggedin] = useState("");
+  const [getUserId, setGetUserId] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [image, setImage] = useState(null);
   const [Edittedimage, setEdittedimage] = useState(null);
   const [id, setId] = useState("");
-  const getLoggedIn = window.localStorage.getItem("is_loggedIn");
 
-  const firstName = window.localStorage.getItem("first_name");
-  const getUserId = window.localStorage.getItem("user_id");
-  const getEmail = window.localStorage.getItem("email");
+useEffect(() => {
+  setGetLoggedin(window.localStorage.getItem("is_loggedIn"))
+  setFirstName(window.localStorage.getItem("first_name"))
+  setGetUserId(window.localStorage.getItem("user_id"))
+  setEmail(window.localStorage.getItem("email"))
+
+}, [])
+
+
 
   const fetchUserDetails = async () => {
     const result = await fetch(`${AppUrl}/users/${getUserId}`);

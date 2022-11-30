@@ -6,7 +6,7 @@ import { ProgressBar, ThreeDots } from "react-loader-spinner";
 import Modal from "../../components/Modal";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import { AppUrl } from "../_app";
-import AuthenticationContext from "../AuthContext";
+import AuthenticationContext from "../../components/AuthContext";
 import Link from "next/link";
 // import Modal from "../../components/Modal";
 

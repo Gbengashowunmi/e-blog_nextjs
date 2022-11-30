@@ -2,7 +2,6 @@ import React from "react";
 import { AiOutlineClockCircle, AiOutlineRight } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import Link from "next/link";
-// import { Link } from "react-router-dom";
 import CustomCard from "./CustomCard";
 import styles from "./styles/Architect.module.scss";
 import useFetch from "./useFetch";

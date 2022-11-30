@@ -28,12 +28,7 @@ export default function Tech({category}) {
     >
       <span>
         <h3>TECH</h3>
-        {/* <Link href="/post">
-          <p>
-          VIEW ALL
-          <AiOutlineRight />
-        </p>
-        </Link> */}
+
       </span>
       <div className={styles.tech_items}>
         {data.map((eachNews) => {

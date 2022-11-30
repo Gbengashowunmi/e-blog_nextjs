@@ -2,13 +2,13 @@ import React, { useState } from "react";
 // import Button from "react-bootstrap/Button";
 // import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './Modal.scss'
+import styles from './Modal.module.scss'
 
 export default function ModalComponent() {
   //   const [modalShow, setModalShow] = useState(false);
   return (
     // <div>
-<div className="modal">
+<div className={styles.modal}>
       <p>Sign Successful. Kindly check your email to verify your account</p>
   
       {/* <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered>

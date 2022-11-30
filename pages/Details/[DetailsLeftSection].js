@@ -10,12 +10,13 @@ import {
 } from "react-icons/ai";
 import { FaWhatsappSquare } from "react-icons/fa";
 import styles from "../../components/styles/DetailsLeft.module.scss";
-import AuthenticationContext from "../AuthContext";
+import AuthenticationContext from "../../components/AuthContext";
 import RightSection from "../../components/RightSection/RightSection";
 import Footer from "../../components/Footer";
 import Headers from "../../components/Header";
 import { AppUrl } from "../_app";
 import Link from "next/link";
+import Readers from "../../components/Readers";
 
 // export async function getStaticProps() {
 //   const router = useRouter();
@@ -34,11 +35,16 @@ import Link from "next/link";
 export default function DetailsLeftSection() {
   const router = useRouter();
   const slug = router.query.DetailsLeftSection;
-  // console.log(router.query.name);
 
   //states declaration
   const [getLoggedIn, setGetLoggedIn] = useState("");
   const [getAdmin, setGetAdmin] = useState("");
+  const [pageUrl, setPageUrl] = useState("");
+
+  useEffect(() => {
+    setPageUrl(window.location.href);
+  }, []);
+
   // const [checkAdmin, setCheckAdmin] = useState('');
   const [getUserId, setGetUserId] = useState("");
   // const [form, setForm] = useState(false);
@@ -221,14 +227,24 @@ export default function DetailsLeftSection() {
               <div className={styles.share}>
                 <AiOutlineShareAlt />
                 <p> SHARE:</p>
-                <Link href='/twitter.com'><AiFillTwitterSquare style={{ height: "50px", width:"50px", color:'blue'
-               }} /></Link>
-                <Link href='/facebook.com'><AiFillFacebook style={{ height: "50px", width:"50px" , color:'blue'
-               }} /></Link>
-               <Link href='/whatsapp.com'> <FaWhatsappSquare style={{ height: "50px", width:"50px", color:'green'
-               }}/></Link>
+                <Link href="/twitter.com">
+                  <AiFillTwitterSquare
+                    style={{ height: "50px", width: "50px", color: "blue" }}
+                  />
+                </Link>
+                <Link href="/facebook.com">
+                  <AiFillFacebook
+                    style={{ height: "50px", width: "50px", color: "blue" }}
+                  />
+                </Link>
+                <Link href="/whatsapp.com">
+                  {" "}
+                  <FaWhatsappSquare
+                    style={{ height: "50px", width: "50px", color: "green" }}
+                  />
+                </Link>
               </div>
-              <input placeholder="https://magonedemo.blogspot.com/2015/06/neque-adipiscing-varius-peo" />
+              <input value={pageUrl} />
             </div>
             <div className={styles.comment_section}>
               <span className={styles.comment_section_header}>
@@ -337,6 +353,7 @@ export default function DetailsLeftSection() {
         
         </> */}
           </div>
+          <Readers title="Related Posts" />
         </div>
 
         <div className={styles.rightSection}>

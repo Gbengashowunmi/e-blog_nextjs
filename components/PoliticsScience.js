@@ -14,12 +14,7 @@ export default function PoliticsScience() {
     <div className={styles.politics_science}>
       <span>
         <h3>POLITICS</h3>
-        <Link href="/post">
-          <p>
-            VIEW ALL
-            <AiOutlineRight />
-          </p>
-        </Link>
+       
       </span>
       <div className={styles.politics}>
         {data.map((eachNews) => {

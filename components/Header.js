@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 // import Link from "next/link";
 import Link from "next/link";
-import AuthenticationContext from "../pages/AuthContext";
+import AuthenticationContext from "./AuthContext";
 
 import styles from "./styles/Header.module.scss";
 
@@ -97,18 +97,11 @@ export default function Headers() {
               <Link href="signin">
                 <button className={styles.login_btn}>Login</button>
               </Link>
-      
             </div>
           ) : (
             <div className={styles.sign_in}>
               {/* <p>Welcome back {authctx.first_name}</p> */}
-              <Link
-                href={
-                  checkAdmin
-                    ? "/dashboard/WriteBlog"
-                    : "/dashboard"
-                }
-              >
+              <Link href={checkAdmin ? "/dashboard/WriteBlog" : "/dashboard"}>
                 <button className={styles.signup_btn}>My Dashboard</button>
               </Link>
             </div>

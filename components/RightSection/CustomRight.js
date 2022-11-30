@@ -7,13 +7,7 @@ import styles from "./styles/CustomRight.module.scss";
 export default function CustomRight({
   header,
   src1,
-  src2,
-  src3,
-  src4,
   textContent1,
-  textContent2,
-  textContent3,
-  textContent4,
 }) {
   return (
     <div className={styles.card_container}>

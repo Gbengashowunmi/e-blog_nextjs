@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Oval } from "react-loader-spinner";
 import Link from "next/link";
 import InputPassword from "../Login/InputPassword";
-// import AuthenticationContext from "./AuthContext";
 import styles from  "../signin/login.module.scss";
 // import Modal from "./ModalComponent";
 // import ModalComponent from "./ModalComponent";

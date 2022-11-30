@@ -83,7 +83,7 @@ categories.map(category=>{
     <i className="fa-solid fa-xmark cancel_btn"></i>
       </div>
       {/* <Fashion/> */}
-      <Readers/>
+      <Readers title="By Readers"/>
       <PoliticsScience/>
       <Architect/>
     </div>
