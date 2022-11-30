@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 // import Link from "next/link";
 import Link from "next/link";
-import AuthenticationContext from "./AuthContext";
+import AuthenticationContext from "../pages/AuthContext";
 
 import styles from "./styles/Header.module.scss";
 

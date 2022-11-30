@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import Dashboard from "../../components/Dashboard/Dashboard";
 // import { useParams } from "react-router";
 import { AppUrl } from "../../pages";
-import AuthenticationContext from "../../components/AuthContext";
+import AuthenticationContext from "../AuthContext";
 //using quill editor in next js
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -140,7 +140,6 @@ export default function WriteBlog() {
               "Post"
             )}
           </button>
-          
         </form>
       </div>
     </Dashboard>

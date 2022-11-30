@@ -3,7 +3,7 @@ import styles from "../components/styles/MainSection.module.scss";
 // import { Outlet } from "react-router";
 import { Helmet } from "react-helmet";
 import Footer from "./Footer";
-import AuthenticationContext from "./AuthContext";
+import AuthenticationContext from "../pages/AuthContext";
 import RightSection from "./RightSection/RightSection";
 import LeftSection from "./LeftSection";
 import Headers from "./Header";

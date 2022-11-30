@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 import { FaWhatsappSquare } from "react-icons/fa";
 import styles from "../../components/styles/DetailsLeft.module.scss";
-import AuthenticationContext from "../../components/AuthContext";
+import AuthenticationContext from "../AuthContext";
 import RightSection from "../../components/RightSection/RightSection";
 import Footer from "../../components/Footer";
 import Headers from "../../components/Header";
