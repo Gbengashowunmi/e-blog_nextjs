@@ -46,7 +46,7 @@ console.log(tech)
           {data.map((eachNews) => {
             if (eachNews.category.name === "Tech") {
               return (
-                <div className={styles.left_cont1}>
+                <div className={styles.left_cont1} key={eachNews.title}>
                   <div className={styles.image_container}>
                     <img src={eachNews[0]?.image} alt={eachNews[0]?.owner} />
                     <div className={styles.button}>

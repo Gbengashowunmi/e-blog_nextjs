@@ -208,7 +208,7 @@ export default function SignUp() {
         </span>
       </form> : 
       <form className={styles.login-form}>
-        <ModalComponent/>
+        {/* <ModalComponent/> */}
       </form>
        }
       

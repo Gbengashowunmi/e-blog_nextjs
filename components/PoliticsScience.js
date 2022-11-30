@@ -25,10 +25,11 @@ export default function PoliticsScience() {
         {data.map((eachNews) => {
           if (eachNews.category.name === "Politics") {
             return (
-              <Link
+              <Link key={eachNews.title}
               href={{pathname:`Details/${eachNews.slug}/`, query:{name:'news'}}}
             >
               <CustomCard
+              key={eachNews.title}
                 title={eachNews.title}
                 src={eachNews.image}
                 desfontSize=".8rem"

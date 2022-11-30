@@ -23,7 +23,7 @@ export default function Readers() {
       {data.map((eachNews) => {
           if(eachNews.category.name === 'Tech'){
           return (
-      <div className={styles.read}>
+      <div className={styles.read} key={eachNews.title}>
         <img
           src={eachNews.image}
           alt={eachNews.owner}

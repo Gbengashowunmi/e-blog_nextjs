@@ -193,17 +193,17 @@ export default function DetailsLeftSection() {
             <div className={styles.headline}>
               <img src={details?.image} alt="details-img" />
               <div className={styles.navigate}>
-                <a href="/">
+                <Link href="/">
                   <p>Home</p>
-                </a>
+                </Link>
                 <AiOutlineRight />
-                <a href="/">
+                <Link href="/">
                   <p>Fashion</p>
-                </a>
+                </Link>
                 <AiOutlineRight />
-                <a href="/">
+                <Link href="/">
                   <p>Photoraphy</p>
-                </a>
+                </Link>
               </div>
               <h1>{details?.title}</h1>
               <div className={styles.comment}>

@@ -23,7 +23,7 @@ export default function Architect() {
       {data.map((eachNews) => {
           if (eachNews.category.name === "Architect") {
             return (
-      <CustomCard src={eachNews.image} author={eachNews.owner} title={eachNews.title} desfontSize=".8rem"
+      <CustomCard src={eachNews.image} key={eachNews.title} author={eachNews.owner} title={eachNews.title} desfontSize=".8rem"
       titlefontSize="32px" dateCreated ={eachNews.created} />
             )
           }

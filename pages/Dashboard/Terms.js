@@ -117,14 +117,14 @@ export default function Terms() {
         is illegal, threatening, fraudulent, or harmful, or in connection with
         any unlawful, illegal, fraudulent, or harmful purpose or activity.
         <br />
-        0.6. To engage in any other conduct that restricts or inhibits anyone's
+        0.6. To engage in any other conduct that restricts or inhibits anyone&apos;s
         use or enjoyment of Service, or which, as determined by us, may harm or
         offend Company or users of Service or expose them to liability.
         <br />
         Additionally, you agree not to:
         <br />
         0.1. Use Service in any manner that could disable, overburden, damage,
-        or impair Service or interfere with any other party's use of Service,
+        or impair Service or interfere with any other party&apos;s use of Service,
         including their ability to engage in real time activities through
         Service. <br />
         0.2. Use any robot, spider, or other automatic device, process, or means
@@ -225,7 +225,7 @@ export default function Terms() {
         alleged Infringement as detailed below, under “DMCA Notice and Procedure
         for Copyright Infringement Claims” <br />
         <br />
-        You may be held accountable for damages (including costs and attorneys'
+        You may be held accountable for damages (including costs and attorneys&apos;
         fees) for misrepresentation or bad-faith claims on the infringement of
         any Content found on and/or through Service on your copyright. <br />
         <br />
@@ -242,7 +242,7 @@ export default function Terms() {
         <br />
         <br />
         0.1. an electronic or physical signature of the person authorized to act
-        on behalf of the owner of the copyright's interest;
+        on behalf of the owner of the copyright&apos;s interest;
         <br />
         0.2. a description of the copyrighted work that you claim has been
         infringed, including the URL (i.e., web page address) of the location
@@ -258,7 +258,7 @@ export default function Terms() {
         law; <br />
         0.6. a statement by you, made under penalty of perjury, that the above
         information in your notice is accurate and that you are the copyright
-        owner or authorized to act on the copyright owner's behalf. <br />
+        owner or authorized to act on the copyright owner&apos;s behalf. <br />
         You can contact our Copyright Agent via email at
         gbengalilmahn@yahoo.com.
         <br />
@@ -301,7 +301,7 @@ export default function Terms() {
         <br />
         For example, the outlined Terms of Use have been created using
         PolicyMaker.io, a free web application for generating high-quality legal
-        documents. PolicyMaker's Terms and Conditions generator is an
+        documents. PolicyMaker&apos;s Terms and Conditions generator is an
         easy-to-use free tool for creating an excellent standard Terms of
         Service template for a website, blog, e-commerce store or app. <br />
         <br />
@@ -353,7 +353,7 @@ export default function Terms() {
         EXCEPT AS PROHIBITED BY LAW, YOU WILL HOLD US AND OUR OFFICERS,
         DIRECTORS, EMPLOYEES, AND AGENTS HARMLESS FOR ANY INDIRECT, PUNITIVE,
         SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGE, HOWEVER IT ARISES
-        (INCLUDING ATTORNEYS' FEES AND ALL RELATED COSTS AND EXPENSES OF
+        (INCLUDING ATTORNEYS&apos; FEES AND ALL RELATED COSTS AND EXPENSES OF
         LITIGATION AND ARBITRATION, OR AT TRIAL OR ON APPEAL, IF ANY, WHETHER OR
         NOT LITIGATION OR ARBITRATION IS INSTITUTED), WHETHER IN AN ACTION OF
         CONTRACT, NEGLIGENCE, OR OTHER TORTIOUS ACTION, OR ARISING OUT OF OR IN

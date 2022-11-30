@@ -68,9 +68,8 @@ export default function RightSection() {
         <div className={customStyles.main_content_container}>
           {data.map((eachNews) => {
             if (eachNews.category.name === "Featured") {
-              console.log(eachNews);
               return (
-                <Link
+                <Link key={eachNews.title}
                   href={{
                     pathname: `/Details/${eachNews.slug}/`,
                     query: { name: "news" },
@@ -104,9 +103,8 @@ export default function RightSection() {
         <div className={customStyles.main_content_container}>
           {data.map((eachNews) => {
             if (eachNews.category.name === "Lifestyle") {
-              console.log(eachNews);
               return (
-                <Link
+                <Link key={eachNews.title}
                   href={{
                     pathname: `/Details/${eachNews.slug}/`,
                     query: { name: "news" },

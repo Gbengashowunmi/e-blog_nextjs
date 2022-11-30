@@ -150,7 +150,7 @@ export default function LoginPage() {
 
         <span>
           <p>
-            Don't have an account? <Link href="signUp">Sign up</Link>
+            Don&apos;t have an account? <Link href="signUp">Sign up</Link>
           </p>
         </span>
       </form>

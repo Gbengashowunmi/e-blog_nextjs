@@ -36,7 +36,7 @@ export default function Business(){
                     <img src="https://3.bp.blogspot.com/-jklMpLEIDso/VZCtVKWiqcI/AAAAAAAAKow/UHLsIAf2xFk/s1600/business_short-interview_75K.jpg" alt="business"/>
                 </div>
                 <div className={styles.caption}>
-                    <p>Katie Diekman, 22, is looking forward to a "gap" year after graduating with a bachelor's degree from the University of Michigan in May. Convallis phe</p>
+                    <p>Katie Diekman, 22, is looking forward to a &quot;gap&quot; year after graduating with a bachelor&apos;s degree from the University of Michigan in May. Convallis phe</p>
                    <span><p><FaComment/> 5</p> <p><AiOutlineClockCircle /> Oct 07, 2022</p></span> 
                 </div>
 
@@ -51,15 +51,15 @@ export default function Business(){
                     >
                 <div className={styles.right}>
                     <button>PEOPLE</button>
-                    <h5>Save '£700' a year by outsourcing your household bills</h5>
+                    <h5>Save &apos;£700&apos; a year by outsourcing your household bills</h5>
                 </div>
                 <div className={styles.right}>
                     <button>PEOPLE</button>
-                    <h5>Save '£700' a year by outsourcing your household bills</h5>
+                    <h5>Save &apos;£700&apos; a year by outsourcing your household bills</h5>
                 </div>
                 <div className={styles.right}>
                     <button>PEOPLE</button>
-                    <h5>Save '£700' a year by outsourcing your household bills</h5>
+                    <h5>Save &apos;£700&apos; a year by outsourcing your household bills</h5>
                 </div>
             </div>
         </div>
