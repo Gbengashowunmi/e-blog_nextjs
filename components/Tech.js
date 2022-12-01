@@ -13,20 +13,10 @@ import useFetch from "./useFetch";
 //   offset: 120,
 // });
 
-export const getStaticProps = async (context) => {
-  const response = await fetch(`${AppUrl}/news/`);
-  const data = await response.json();
 
-return {
-  props:{ data }
-}
-}
-
-
-
-const Tech = (props) => {
+const Tech = ({news}) => {
+  // console.log(showCategory);
   const { data } = useFetch(`${AppUrl}/news/`);
-  // console.log(datas);
   return (
     <div
       className={styles.tech}
@@ -38,7 +28,6 @@ const Tech = (props) => {
       // data-aos-easing="ease-in-out"
       // data-aos-once="false"
     >
-{console.log(props)}
 
       <span>
         <h3>TECH</h3>
@@ -50,7 +39,7 @@ const Tech = (props) => {
         </Link> */}
       </span>
       <div className={styles.tech_items}>
-        {data.map((eachNews) => {
+        {news.map((eachNews) => {
           if (eachNews.category.name === "Tech") {
             return (
               <>
