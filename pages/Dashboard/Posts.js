@@ -5,9 +5,11 @@ import styles from "../../components/Dashboard/DashboardStyles/Post.module.scss"
 import { ProgressBar, ThreeDots } from "react-loader-spinner";
 import Modal from "../../components/Modal";
 import Dashboard from "../../components/Dashboard/Dashboard";
-import { AppUrl } from "../_app";
-import AuthenticationContext from "../AuthContext";
+// import { AppUrl } from "../_app";
+// import AuthenticationContext from "../AuthContext";
 import Link from "next/link";
+import { AppUrl } from "../../components/_app";
+import AuthenticationContext from "../../components/AuthContext";
 // import Modal from "../../components/Modal";
 
 export default function Posts() {

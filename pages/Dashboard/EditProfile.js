@@ -3,7 +3,8 @@ import Dashboard from "../../components/Dashboard/Dashboard";
 import TextField from "@mui/material/TextField";
 import styles from "../../components/Dashboard/DashboardStyles/EditProfile.module.scss";
 import Fab from "@mui/material/Fab";
-import { AppUrl } from "../_app";
+import { AppUrl } from "../../components/_app";
+// import { AppUrl } from "../_app";
 
 const EditProfile = () => {
   const [first_name, setFirstName] = useState("");
