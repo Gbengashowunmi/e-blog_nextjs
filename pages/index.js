@@ -4,7 +4,9 @@ import styles from '../styles/Home.module.css'
 import MainSection from '../components/MainSection';
 
 // export const AppUrl = "https://essential.pythonanywhere.com";
-export const AppUrl = "http://192.168.1.131:8000";
+// export const AppUrl = "http://192.168.1.131:8000";
+export const AppUrl = "https://userauth.pythonanywhere.com"; 
+
 export default function Home() {
 
   return (

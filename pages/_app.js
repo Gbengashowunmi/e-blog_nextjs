@@ -7,7 +7,8 @@ import '../styles/globals.css'
 
 
 // export const AppUrl = "https://essential.pythonanywhere.com";
-export const AppUrl = "http://192.168.1.131:8000"; 
+// export const AppUrl = "http://192.168.1.131:8000"; 
+export const AppUrl = "https://userauth.pythonanywhere.com"; 
 
 import AOS from "aos";
 
