@@ -58,7 +58,8 @@ export const AuthenticationContextProvider = (props) =>{
 
     }
 
-    return (<AuthenticationContext.Provider value={contextValue}>
+    return (
+    <AuthenticationContext.Provider value={contextValue}>
 {props.children}
     </AuthenticationContext.Provider>)
 }

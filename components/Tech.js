@@ -3,48 +3,27 @@ import { AiOutlineRight, AiTwotoneCalendar } from "react-icons/ai";
 import Link from "next/link";
 import styles from "./styles/Tech.module.scss";
 import "aos/dist/aos.css";
-import Aos from "aos";
 import { AppUrl } from "../pages/_app";
 import useFetch from "./useFetch";
 
-// import { useLocation } from '@reach/router';
-
-// Aos.init({
-//   offset: 120,
-// });
 
 
-const Tech = ({news}) => {
-  // console.log(showCategory);
+const Tech = () => {
   const { data } = useFetch(`${AppUrl}/news/`);
   return (
     <div
       className={styles.tech}
-      // category={category}
-      // data-aos="fade-up"
-      // data-aos-offset="200"
-      // data-aos-delay="90"
-      // data-aos-duration="1000"
-      // data-aos-easing="ease-in-out"
-      // data-aos-once="false"
     >
 
       <span>
         <h3>TECH</h3>
-        {/* <Link href="/post">
-          <p>
-          VIEW ALL
-          <AiOutlineRight />
-        </p>
-        </Link> */}
       </span>
       <div className={styles.tech_items}>
-        {news.map((eachNews) => {
+        {data.map((eachNews) => {
           if (eachNews.category.name === "Tech") {
             return (
               <>
                 <div className={styles.tech_item} key={eachNews.id}>
-                  {/* <Link href={`detail/${eachNews.id}`}> <div className={styles.image-container'> */}
                   <Link
                     href={{
                       pathname: `Details/${eachNews.slug}/`,

@@ -76,7 +76,7 @@ export default function LeftSection() {
         )}
       </div>
       <div >
-        <Tech news={news} />
+        <Tech/>
       </div>
       <div className={styles.left_ads}>
         New ADVERTISEMENT
