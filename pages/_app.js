@@ -1,9 +1,4 @@
 import '../styles/globals.css'
-// import "../components/Dashboard/DashboardStyles/WriteBlog.scss";
-// import "../components/Dashboard/DashboardStyles/Dashboard.scss";
-// import "../components/Dashboard/DashboardStyles/LeftSideBar.scss";
-// import "../components/Dashboard/DashboardStyles/RIghtSideBar.scss";
-
 
 
 // export const AppUrl = "https://essential.pythonanywhere.com";
