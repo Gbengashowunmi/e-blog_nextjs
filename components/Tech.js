@@ -12,7 +12,7 @@ import useFetch from "./useFetch";
 //   offset: 120,
 // });
 
-export default function Tech({category}) {
+export default function Tech() {
   const {data} = useFetch(`${AppUrl}/news/`)
 
   return (

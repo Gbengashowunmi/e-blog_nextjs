@@ -18,7 +18,7 @@ export default function RightSection() {
     <div className={styles.rightSection}>
       {/* TRENDING NEWS */}
       <div className={customStyles.card_container}>
-        <header className="header">TRENDING</header>
+        <header className="header"><strong>TRENDING</strong></header>
         <div className={customStyles.main_content_container}>
           {data.map((eachNews) => {
             if (eachNews.category.name === "Trending") {
@@ -43,7 +43,6 @@ export default function RightSection() {
                   <div className={customStyles.main_content}>
                     <img src={eachNews.image} alt={eachNews.owner} />
                     <p className={customStyles.text_content}>
-                      {" "}
                       {eachNews.description.substring(0, 50)}
                       <br />
                       <p className={customStyles.date}>
@@ -64,7 +63,7 @@ export default function RightSection() {
       </div>
       {/* FEATURED POSTS */}
       <div className={customStyles.card_container}>
-        <header className="header">FEATURED</header>
+        <header className="header"><strong>FEATURED</strong></header>
         <div className={customStyles.main_content_container}>
           {data.map((eachNews) => {
             if (eachNews.category.name === "Featured") {
@@ -99,7 +98,7 @@ export default function RightSection() {
       </div>
       {/* LIFESTYLE POSTS */}
       <div className={customStyles.card_container}>
-        <header className="header">LIFESTYLE</header>
+        <header className="header"><strong>LIFESTYLE</strong></header>
         <div className={customStyles.main_content_container}>
           {data.map((eachNews) => {
             if (eachNews.category.name === "Lifestyle") {
@@ -133,7 +132,36 @@ export default function RightSection() {
         New ADVERTISEMENT
         <i className="fa-solid fa-xmark cancel_btn"></i>
       </div>
-
+      {/* LIFESTYLE POSTS */}
+      <div className={customStyles.card_container}>
+        <header className="header"><strong>SPORTS</strong></header>
+        <div className={customStyles.main_content_container}>
+          {data.slice(0,10).map((eachNews) => {
+            if (eachNews.category.name === "Sports") {
+              return (
+                <Link key={eachNews.title}
+                  href={{
+                    pathname: `/Details/${eachNews.slug}/`,
+                    query: { name: "news" },
+                  }}
+                >
+                  <div className={customStyles.main_content}>
+                    <img src={eachNews.image} alt={eachNews.owner} />
+                    <p className={customStyles.text_content}>
+                      {" "}
+                      {eachNews.description.substring(0, 50)}
+                      <br />
+                      <p className={customStyles.date}>
+                        <AiOutlineClockCircle /> {eachNews.created}
+                      </p>
+                    </p>
+                  </div>
+                </Link>
+              );
+            }
+          })}
+        </div>
+      </div>
       <div className={styles.right_ads}>
         New ADVERTISEMENT <br />
         New ADVERTISEMENT <br />

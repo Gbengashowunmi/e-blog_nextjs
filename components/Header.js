@@ -101,7 +101,7 @@ export default function Headers() {
           ) : (
             <div className={styles.sign_in}>
               {/* <p>Welcome back {authctx.first_name}</p> */}
-              <Link href={checkAdmin ? "/dashboard/WriteBlog" : "/dashboard"}>
+              <Link href={checkAdmin ? "/Dashboard/WriteBlog" : "/Dashboard/WriteBlog"}>
                 <button className={styles.signup_btn}>My Dashboard</button>
               </Link>
             </div>

@@ -86,7 +86,7 @@ export default function LoginPage() {
         toast.success(`Welcome back ${firstName}😀`);
         router.push("/");
       }
-      // console.log(data, data.token);
+      console.log(window.localStorage.getItem('first_name'))
       // console.log(input);
     }
   };
@@ -98,7 +98,7 @@ export default function LoginPage() {
       </button>
 
       <form className={styles.login_form} onSubmit={HandleSubmit}>
-        <h3>Log Here</h3>
+        <h3>Log in Here</h3>
         <p style={{ color: "tomato" }}>{error}</p>
         <div className={styles.username}>
           {/* <p>Username</p> */}

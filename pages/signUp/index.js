@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Oval } from "react-loader-spinner";
 import Link from "next/link";
 import InputPassword from "../Login/InputPassword";
-import styles from  "../signin/login.module.scss";
+import styles from "../signin/login.module.scss";
 // import Modal from "./ModalComponent";
 // import ModalComponent from "./ModalComponent";
 import { AppUrl } from "../_app";
@@ -73,7 +73,9 @@ export default function SignUp() {
 
     // console.log(authctx.isLoggedIn)
 
-    if (formValid) { 
+    console.log(formValid);
+
+    if (formValid) {
       // setLoading(true);
 
       const response = await fetch(`${AppUrl}/signup/`, {
@@ -94,7 +96,6 @@ export default function SignUp() {
         setModalShow(true);
         console.log("succesful sign up");
       }
-      // console.log(input);
     }
   };
 
@@ -106,110 +107,112 @@ export default function SignUp() {
         Go Home
       </button>
 
-       {!modalShow ?
-       <form className={styles.login_form} onSubmit={HandleSubmit}>
-        <h3>Sign Up Here</h3>
-        <p style={{ color: "tomato" }}>{error}</p>
+       
+        <form className={styles.login_form} onSubmit={HandleSubmit}>
+          <h3>Sign Up Here</h3>
+          <p style={{ color: "tomato" }}>{error}</p>
+          {!modalShow ?"":<p style={{ color: "green" }}>Sign Up Success, kindly verify your email and log in or <button onClick={() => router.push("/")}>click to go to Home page</button></p>}
 
-        <div className={styles.Fname}>
-          {/* <label for="Fname">
+          <div className={styles.Fname}>
+            {/* <label for="Fname">
           <p>First Name:</p>
         </label> */}
-          <br />
-          <input
-            name="first_name"
-            onChange={HandleInput}
-            className={styles.input}
-            placeholder="Enter First Name"
-            type="text"
-          />
-        </div>
-        <div className={styles.Lname}>
-          {/* <label for="Lname">
+            <br />
+            <input
+              name="first_name"
+              onChange={HandleInput}
+              className={styles.input}
+              placeholder="Enter First Name"
+              type="text"
+            />
+          </div>
+          <div className={styles.Lname}>
+            {/* <label for="Lname">
           <p>last Name:</p>
         </label> */}
-          <br />
-          <input
-            name="last_name"
-            onChange={HandleInput}
-            className={styles.input}
-            placeholder="Enter Last Name"
-            type="text"
-          />
-        </div>
-        <div className={styles.email}>
-          {/* <label for="email">
+            <br />
+            <input
+              name="last_name"
+              onChange={HandleInput}
+              className={styles.input}
+              placeholder="Enter Last Name"
+              type="text"
+            />
+          </div>
+          <div className={styles.email}>
+            {/* <label for="email">
           <p>Email:</p>
         </label> */}
-          <br />
-          <input
-            name="email"
-            onChange={HandleInput}
-            className={styles.input}
-            placeholder="Enter Email"
-            type="email"
-          />
-        </div>
-
-        <InputPassword
-          name="password"
-          type={visibility ? "text" : "password"}
-          placeholder="Enter Password"
-          inputHead="Password:"
-          onChange={HandleInput}
-          icon={
-            <i
-              className={styles.see ? "fa-solid fa-eye eye" : "fa-solid fa-eye-slash eye"
-              }
-              onClick={HandleSee}
-            ></i>
-          }
-        />
-
-        <InputPassword
-          name="confirmPassword"
-          type={visibility ? "text" : "password"}
-          placeholder="Confirm Password"
-          inputHead="Confirm Password:"
-          onChange={HandleInput}
-          icon={
-            <i
-              className={styles.
-                see ? "fa-solid fa-eye eye" : "fa-solid fa-eye-slash eye"
-              }
-              onClick={HandleSee}
-            ></i>
-          }
-        />
-
-        <button className={styles.login_btn} type="submit">
-          {loading ? (
-            <Oval
-              height={30}
-              width={30}
-              color="white"
-              margin="auto"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-              ariaLabel="oval-loading"
-              secondaryColor="white"
-              strokeWidth={2}
+            <br />
+            <input
+              name="email"
+              onChange={HandleInput}
+              className={styles.input}
+              placeholder="Enter Email"
+              type="email"
             />
-          ) : (
-            "Sign Up"
-          )}
-        </button>
-        <span>
-          <p>
-            have an account? <Link href="signin">Log in</Link>
-          </p>
-        </span>
-      </form> : 
-      <form className={styles.login-form}>
-        {/* <ModalComponent/> */}
-      </form>
-       }
+          </div>
+
+          <InputPassword
+            name="password"
+            type={visibility ? "text" : "password"}
+            placeholder="Enter Password"
+            inputHead="Password:"
+            onChange={HandleInput}
+            icon={
+              <i
+                className={
+                  styles.see
+                    ? "fa-solid fa-eye eye"
+                    : "fa-solid fa-eye-slash eye"
+                }
+                onClick={HandleSee}
+              ></i>
+            }
+          />
+
+          <InputPassword
+            name="confirmPassword"
+            type={visibility ? "text" : "password"}
+            placeholder="Confirm Password"
+            inputHead="Confirm Password:"
+            onChange={HandleInput}
+            icon={
+              <i
+                className={
+                  styles.see
+                    ? "fa-solid fa-eye eye"
+                    : "fa-solid fa-eye-slash eye"
+                }
+                onClick={HandleSee}
+              ></i>
+            }
+          />
+
+          <button className={styles.login_btn} type="submit">
+            {loading ? (
+              <Oval
+                height={30}
+                width={30}
+                color="white"
+                margin="auto"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+                ariaLabel="oval-loading"
+                secondaryColor="white"
+                strokeWidth={2}
+              />
+            ) : (
+              "Sign Up"
+            )}
+          </button>
+          <span>
+            <p>
+              have an account? <Link href="signin">Log in</Link>
+            </p>
+          </span>
+        </form>
       
     </div>
   );
