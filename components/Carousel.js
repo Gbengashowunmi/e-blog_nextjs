@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import styles from "../components/styles/carousel.module.scss";
-import { AppUrl } from "../pages/_app";
+import { AppUrl } from "./_app";
 
 export default function ControlledCarousel() {
   const router = useRouter();

@@ -4,7 +4,7 @@ import { FaComment } from "react-icons/fa";
 import Link from "next/link";
 import styles from "./styles/Reader.module.scss";
 import useFetch from "./useFetch";
-import { AppUrl } from "../pages/_app";
+import { AppUrl } from "./_app";
 export default function Readers({ title }) {
   const { data } = useFetch(`${AppUrl}/news/`);
 

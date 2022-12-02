@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 
 import styles from "./styles/Footer.module.scss";
-import { AppUrl } from "../pages/_app";
+import { AppUrl } from "./_app";
 export default function Footer() {
   const [input, setInput] = useState({
     email: "",

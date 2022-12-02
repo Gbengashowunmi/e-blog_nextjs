@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import AuthenticationContext from "../../pages/AuthContext";
+import AuthenticationContext from "../AuthContext";
 import styles from "./DashboardStyles/RightSideBar.module.scss";
 
 export default function RightSideBar() {

@@ -6,8 +6,8 @@ import { Oval } from "react-loader-spinner";
 import { toast } from "react-toastify";
 import Dashboard from "../../components/Dashboard/Dashboard";
 // import { useParams } from "react-router";
-import AuthenticationContext from "../AuthContext";
-import { AppUrl } from "../_app";
+import AuthenticationContext from "../../components/AuthContext";
+import { AppUrl } from "../../components/_app";
 //using quill editor in next js
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AppUrl } from "../pages/index";
+import { AppUrl } from "./index";
 import Architect from "./Architect";
 import Business from "./Business";
 import Fashion from "./Fashion";
@@ -9,23 +9,15 @@ import StaffPick from "./StaffPick";
 // import './styles/FilterBtn.scss'
 import Tech from "./Tech";
 
-export default function FilterBtns(){
+export default function FilterBtns() {
+  //   const filterCategory = ()=>{
+  //     categories.map(category=>{
+  //         category.filter(category.name=== )
+  //     })
+  //   }
 
-   
-
-    //   const filterCategory = ()=>{
-    //     categories.map(category=>{
-    //         category.filter(category.name=== )
-    //     })
-    //   }
-
-
-   
-
-
-    return(
-    
-        {/* <div>
+  return {
+    /* <div>
             <div hidden={showCategory !== "Sports "}><StaffPick /></div>
             <div hidden={showCategory !== "Headline"}><Business /></div>
             <div hidden={showCategory !== "Tech"}><Tech /></div>
@@ -36,7 +28,6 @@ export default function FilterBtns(){
             <div></div>
             <div></div>
             <div></div>
-        </div> */}
-    
-    )
+        </div> */
+  };
 }

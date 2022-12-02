@@ -3,18 +3,13 @@ import { AiOutlineRight, AiTwotoneCalendar } from "react-icons/ai";
 import Link from "next/link";
 import styles from "./styles/Tech.module.scss";
 import "aos/dist/aos.css";
-import { AppUrl } from "../pages/_app";
+import { AppUrl } from "./_app";
 import useFetch from "./useFetch";
-
-
 
 const Tech = () => {
   const { data } = useFetch(`${AppUrl}/news/`);
   return (
-    <div
-      className={styles.tech}
-    >
-
+    <div className={styles.tech}>
       <span>
         <h3>TECH</h3>
       </span>

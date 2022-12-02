@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
-import AuthenticationContext from "../../pages/AuthContext";
+import AuthenticationContext from "../AuthContext";
 // import { Link, useNavigate } from "react-router-dom";
 import styles from "./DashboardStyles/LeftSideBar.module.scss";
 

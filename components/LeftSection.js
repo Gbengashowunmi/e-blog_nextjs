@@ -11,7 +11,7 @@ import styles from "./styles/leftSection.module.scss";
 import filterbtnstyles from "./styles/FilterBtn.module.scss";
 import Tech from "./Tech";
 import { ThreeDots } from "react-loader-spinner";
-import { AppUrl } from "../pages/_app";
+import { AppUrl } from "./_app";
 import { useRouter } from "next/router";
 import useFetch from "./useFetch";
 
@@ -39,10 +39,9 @@ export default function LeftSection() {
 
   const { data } = useFetch(`${AppUrl}/news/`);
   const handleBtns = (cat) => {
-    const filteredNews = data.filter((item) => item.category.name === cat
-      );
-      // return filteredNews
-    setNews(filteredNews)
+    const filteredNews = data.filter((item) => item.category.name === cat);
+    // return filteredNews
+    setNews(filteredNews);
   };
 
   return (
@@ -75,8 +74,8 @@ export default function LeftSection() {
           })
         )}
       </div>
-      <div >
-        <Tech/>
+      <div>
+        <Tech />
       </div>
       <div className={styles.left_ads}>
         New ADVERTISEMENT
@@ -91,7 +90,7 @@ export default function LeftSection() {
       </div>
       {/* <Fashion/> */}
 
-      <div >
+      <div>
         <Readers title="Weather" news={news} />
       </div>
 
