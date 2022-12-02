@@ -16,7 +16,7 @@ export default function Business(){
     return (
             <div className={styles.businessSection} >
             <header>
-                <h3>BUSINESS</h3>
+                <h3>Fashion</h3>
         {/* <Link href="/post">
 
                 <p>VIEW ALL <AiOutlineRight /> </p>

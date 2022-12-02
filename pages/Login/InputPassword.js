@@ -16,9 +16,7 @@ export default function InputPassword({
 //     }
   return (
     <div className={styles.inputPassword}>
-      {/* <label for="confirmpass">
-        <p>{inputHead}</p>
-      </label> */}
+   
       <br />
       <div className={styles.input}>
         <input name={name && name} className={styles.input} placeholder={placeholder} type={type && type} onChange={onChange && onChange}/>

@@ -34,6 +34,7 @@ setLoading(true);
     console.log(data)
   }
   
+  console.log(carouselDetails)
   //loading time out
   setTimeout(() => {
     setLoading(false)

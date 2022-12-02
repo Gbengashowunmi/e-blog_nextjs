@@ -11,11 +11,11 @@ export default function Architect() {
   return (
     <div className={styles.architect_container}>
       <span>
-        <h3>ARCHITECT</h3>
+        <h3>Sports</h3>
       
       </span>
       {data.map((eachNews) => {
-          if (eachNews.category.name === "Architect") {
+          if (eachNews.category.name === "Sports") {
 
             return (
       <CustomCard src={eachNews.image} key={eachNews.title} author={eachNews.owner} title={eachNews.title} desfontSize=".8rem"

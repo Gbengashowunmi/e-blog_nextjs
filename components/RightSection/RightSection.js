@@ -12,7 +12,11 @@ export default function RightSection() {
 
   const { data, loading } = useFetch(`${AppUrl}/news/`);
 
+  const [loaded, setLoaded] = useState(false)
 
+  setTimeout(() => {
+    setLoaded(true)
+  }, 3000);
 
   return (
     <div className={styles.rightSection}>
@@ -22,7 +26,7 @@ export default function RightSection() {
         <div className={customStyles.main_content_container}>
           {data.map((eachNews) => {
             if (eachNews.category.name === "Trending") {
-              return (loading ? 
+              return (!loaded ? 
                 <ThreeDots
                   height="80"
                   width="80"

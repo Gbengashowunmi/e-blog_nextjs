@@ -15,7 +15,7 @@ export default function Readers({ title }) {
         <h3>{title && title}</h3>
       </span>
       {data.map((eachNews) => {
-        if (eachNews.category.name === "Fashion") {
+        if (eachNews.category.name === "Headline") {
           return (
             <Link
               key={eachNews.title}
