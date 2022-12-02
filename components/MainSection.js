@@ -11,9 +11,9 @@ import Headers from "./Header";
 export default function MainSection() {
   const authctx = useContext(AuthenticationContext);
 
-  const scrollUp = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
+  // const scrollUp = () => {
+  //   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  // };
   useEffect(() => {
     // window.addEventListener("scroll", isSticky);
     // return () => {
@@ -52,13 +52,9 @@ export default function MainSection() {
           <RightSection />
         </div>
         {/* </div> */}
-        <button
-          // onClick={scrollUp}
-          className="up-btn"
-        >
+        {/* <button onClick={scrollUp} className="up-btn">
           <i className="fa-solid fa-circle-up"></i>
-          mee
-        </button>
+        </button> */}
       </div>
       <div className={styles.footer}>
         <Footer />

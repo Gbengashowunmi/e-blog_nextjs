@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { AppUrl } from "../_app";
+import { AppUrl } from "../../pages/_app";
 import useFetch from "../useFetch";
 import CustomRight from "./CustomRight";
 import styles from "./styles/RightSection.module.scss";
@@ -9,7 +9,10 @@ import customStyles from "./styles/CustomRight.module.scss";
 import { ThreeDots } from "react-loader-spinner";
 
 export default function RightSection() {
+
   const { data, loading } = useFetch(`${AppUrl}/news/`);
+
+
 
   return (
     <div className={styles.rightSection}>
@@ -19,7 +22,7 @@ export default function RightSection() {
         <div className={customStyles.main_content_container}>
           {data.map((eachNews) => {
             if (eachNews.category.name === "Trending") {
-              return loading ? (
+              return (loading ? 
                 <ThreeDots
                   height="80"
                   width="80"
@@ -30,7 +33,7 @@ export default function RightSection() {
                   wrapperClassName=""
                   visible={true}
                 />
-              ) : (
+               : 
                 <Link
                   href={{
                     pathname: `/Details/${eachNews.slug}/`,
@@ -49,7 +52,7 @@ export default function RightSection() {
                     </p>
                   </div>
                 </Link>
-              );
+              )
             }
           })}
         </div>
@@ -66,8 +69,7 @@ export default function RightSection() {
           {data.map((eachNews) => {
             if (eachNews.category.name === "Featured") {
               return (
-                <Link
-                  key={eachNews.title}
+                <Link key={eachNews.title}
                   href={{
                     pathname: `/Details/${eachNews.slug}/`,
                     query: { name: "news" },
@@ -102,8 +104,7 @@ export default function RightSection() {
           {data.map((eachNews) => {
             if (eachNews.category.name === "Lifestyle") {
               return (
-                <Link
-                  key={eachNews.title}
+                <Link key={eachNews.title}
                   href={{
                     pathname: `/Details/${eachNews.slug}/`,
                     query: { name: "news" },

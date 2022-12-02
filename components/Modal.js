@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
-// import { AppUrl } from "../pages/_app";
+import { AppUrl } from "../pages/_app";
 import styles from './styles/Modal.module.scss'
-import { AppUrl } from "./_app";
 
 export default function Modal({slug,method}) {
     

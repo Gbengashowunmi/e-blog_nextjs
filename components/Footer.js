@@ -8,8 +8,8 @@ import {
 // import { Link } from "react-router-dom";
 import Link from "next/link";
 
+import { AppUrl } from "../pages/index";
 import styles from "./styles/Footer.module.scss";
-import { AppUrl } from "./_app";
 export default function Footer() {
   const [input, setInput] = useState({
     email: "",

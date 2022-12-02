@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import useFetch from "./useFetch";
-import { AppUrl } from "./_app";
+import { AppUrl } from "../pages/_app";
 // AOS.init({
 //   offset: 120
 // });
@@ -14,10 +14,11 @@ export default function Fashion() {
   const { data } = useFetch(`${AppUrl}/posts/`);
 
   // console.log(data);
-  const tech = data.map((eachNews) => {
-    if (eachNews.category.name === "Tech") return eachNews.category.name;
-  });
-  console.log(tech);
+ const tech = data.map((eachNews) => {
+    if(eachNews.category.name === "Tech")
+    return eachNews.category.name
+})
+console.log(tech)
 
   return (
     <div className={styles.fashion_container}>

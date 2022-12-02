@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./login.module.scss";
 import { Oval } from "react-loader-spinner";
 import AuthenticationContext from "../../components/AuthContext";
-import { AppUrl } from "../../components/_app";
+import { AppUrl } from "../_app";
 import { toast } from "react-toastify";
 import InputPassword from "../Login/InputPassword";
 import { useRouter } from "next/router";

@@ -5,11 +5,9 @@ import styles from "../../components/Dashboard/DashboardStyles/Post.module.scss"
 import { ProgressBar, ThreeDots } from "react-loader-spinner";
 import Modal from "../../components/Modal";
 import Dashboard from "../../components/Dashboard/Dashboard";
-// import { AppUrl } from "../_app";
-// import AuthenticationContext from "../AuthContext";
-import Link from "next/link";
-import { AppUrl } from "../../components/_app";
+import { AppUrl } from "../_app";
 import AuthenticationContext from "../../components/AuthContext";
+import Link from "next/link";
 // import Modal from "../../components/Modal";
 
 export default function Posts() {
@@ -21,7 +19,7 @@ export default function Posts() {
   const [publish, setPublish] = useState(false);
   const [reject, setReject] = useState(false);
   const [getAdmin, setGetAdmin] = useState(false);
-  const [getLoggedIn, setGetLoggedIn] = useState("");
+  const [getLoggedIn, setGetLoggedIn] = useState('');
 
   useEffect(() => {
     setGetAdmin(window.localStorage.getItem("is_admin"));

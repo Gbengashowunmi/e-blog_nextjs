@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import styles from '../../components/Dashboard//DashboardStyles/Profile.module.scss'
 import Link from "next/link";
-import { AppUrl } from "../../components/_app";
-// import { AppUrl } from "../_app";
+import { AppUrl } from "../_app";
 
 const Profile = () => {
 
